@@ -5,27 +5,27 @@ import VideoPlaceholder from "./VideoPlaceholder";
 import { IconLeaf, IconShield, IconDroplet, IconSparkle, IconMicroscope, IconSprout } from "./icons";
 
 const effects = [
-  { icon: IconLeaf, title: "즉각 진정", desc: "자극받은 피부를 빠르게 쿨링 & 진정" },
-  { icon: IconShield, title: "장벽 강화", desc: "손상된 피부 장벽을 탄탄하게 회복" },
-  { icon: IconDroplet, title: "깊은 보습", desc: "속부터 채워지는 수분감" },
-  { icon: IconSparkle, title: "피부결 개선", desc: "매끄럽고 건강한 피부 톤" },
+  { icon: IconLeaf, title: "Instant Calming", desc: "Rapidly cools and soothes irritated skin" },
+  { icon: IconShield, title: "Barrier Repair", desc: "Rebuilds and strengthens damaged skin barrier" },
+  { icon: IconDroplet, title: "Deep Hydration", desc: "Replenishes moisture from within" },
+  { icon: IconSparkle, title: "Radiant Glow", desc: "Smooth, healthy, even-toned complexion" },
 ];
 
 const mechanismSteps = [
   {
     step: "01",
-    title: "마다가스카르 센텔라 추출",
-    desc: "마다가스카르 고원의 깨끗한 환경에서 자란 센텔라 아시아티카를 단일 추출 공법으로 정제합니다.",
+    title: "Madagascar Centella Extract",
+    desc: "Centella Asiatica grown in the pristine highlands of Madagascar, refined through a single-extraction method.",
   },
   {
     step: "02",
-    title: "피부 깊숙이 흡수",
-    desc: "초저분자 앰플 포뮬러가 피부 각질층까지 빠르게 침투하여 유효 성분을 전달합니다.",
+    title: "Deep Skin Absorption",
+    desc: "Ultra-light ampoule formula penetrates quickly through the stratum corneum to deliver active ingredients.",
   },
   {
     step: "03",
-    title: "장벽 재건 & 진정",
-    desc: "마데카소사이드와 아시아티코사이드가 피부 장벽을 강화하고 염증 반응을 억제합니다.",
+    title: "Barrier Rebuild & Calm",
+    desc: "Madecassoside and Asiaticoside strengthen the skin barrier and suppress inflammatory responses.",
   },
 ];
 
@@ -44,18 +44,10 @@ const fadeUp = {
 export default function HeroSection() {
   return (
     <section id="hero" className="relative snap-y-proximity overflow-hidden pt-28 sm:pt-32">
-      <div className="mesh-bg" aria-hidden="true" />
-
-      {/* Editorial split hero — mobile: vertical stack, desktop: asymmetric */}
       <div className="section-padding relative pb-8 sm:pb-16">
         <div className="section-container">
           <div className="grid items-end gap-10 lg:grid-cols-12 lg:gap-8">
-            {/* Left: headline — editorial split */}
-            <motion.div
-              initial="hidden"
-              animate="visible"
-              className="break-keep lg:col-span-5 lg:pb-8"
-            >
+            <motion.div initial="hidden" animate="visible" className="lg:col-span-5 lg:pb-8">
               <motion.span custom={0} variants={fadeUp} className="eyebrow">
                 Madagascar Centella
               </motion.span>
@@ -63,34 +55,34 @@ export default function HeroSection() {
               <motion.h1
                 custom={1}
                 variants={fadeUp}
-                className="mt-6 font-display text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl"
+                className="mt-6 font-display text-4xl font-extrabold leading-tight tracking-tight text-navy-700 sm:text-5xl lg:text-6xl"
               >
-                마다가스카르
+                Madagascar
                 <br />
-                센텔라{" "}
-                <span className="text-gradient-centella">앰플</span>
+                Centella{" "}
+                <span className="text-gradient-water">Ampoule</span>
               </motion.h1>
 
               <motion.p
                 custom={2}
                 variants={fadeUp}
-                className="mt-5 max-w-[65ch] text-base leading-relaxed text-zinc-400 sm:text-lg"
+                className="mt-5 max-w-[65ch] text-base leading-relaxed text-navy-500 sm:text-lg"
               >
-                마다가스카르 고원의 순수 센텔라 아시아티카 100% 단일 추출.
-                민감하고 지친 피부에 본연의 힘을 되찾아주는 프리미엄 앰플.
+                100% single-extracted Centella Asiatica from the Madagascar highlands. A premium
+                ampoule that restores your skin&apos;s natural resilience — gentle enough for the
+                most sensitive skin.
               </motion.p>
 
               <motion.div custom={3} variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
                 <a href="#buy" className="btn-primary group">
-                  지금 구매하기
+                  Shop Now
                 </a>
-                <a href="#details" className="btn-outline">
-                  상세 정보
+                <a href="#about" className="btn-outline">
+                  Learn More
                 </a>
               </motion.div>
             </motion.div>
 
-            {/* Right: product + CF — overlapping z-axis cascade on desktop */}
             <div className="relative lg:col-span-7">
               <motion.div
                 initial={{ opacity: 0, y: 40 }}
@@ -98,37 +90,47 @@ export default function HeroSection() {
                 transition={{ ...spring, delay: 0.3 }}
                 className="relative mx-auto max-w-sm lg:max-w-none"
               >
-                {/* Product visual */}
-                <div className="double-bezel mx-auto max-w-[280px] sm:max-w-xs lg:max-w-sm">
-                  <div className="relative aspect-[3/4] overflow-hidden rounded-[calc(2rem-0.375rem)] bg-gradient-to-b from-centella-900/30 to-surface-raised">
+                <div className="glass-card mx-auto max-w-[280px] sm:max-w-xs lg:max-w-sm">
+                  <div className="product-hero-visual relative aspect-[3/4] overflow-hidden rounded-[calc(1.5rem-0.25rem)]">
+                    {/* Water ripple layers */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-aqua-200/40 via-transparent to-lavender-100/30" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-aqua-300/20 to-transparent" />
+                    <div className="water-shimmer absolute inset-0 opacity-20" />
+
+                    {/* Floating bubbles */}
+                    <div className="absolute left-6 top-12 h-8 w-8 rounded-full border border-white/60 bg-white/30 backdrop-blur-sm animate-bubble-float" />
+                    <div className="absolute right-8 top-24 h-5 w-5 rounded-full border border-white/50 bg-aqua-100/40 animate-float" />
+                    <div className="absolute bottom-32 left-10 h-4 w-4 rounded-full bg-lavender-200/50 animate-float" style={{ animationDelay: "2s" }} />
+
                     <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8">
                       <div className="animate-float">
-                        <div className="flex h-48 w-20 flex-col items-center justify-end rounded-t-full rounded-b-lg border border-white/10 bg-gradient-to-b from-white/10 to-centella-900/20 shadow-ambient sm:h-56 sm:w-24">
-                          <div className="mb-auto mt-6 h-3 w-8 rounded-sm bg-centella-500/40" />
+                        <div className="relative flex h-48 w-20 flex-col items-center justify-end rounded-t-full rounded-b-lg border border-white/70 bg-gradient-to-b from-white/80 to-aqua-100/60 shadow-glass sm:h-56 sm:w-24">
+                          <div className="absolute -top-1 left-1/2 h-3 w-10 -translate-x-1/2 rounded-full bg-white/90 shadow-soft" />
+                          <div className="mb-auto mt-8 h-3 w-8 rounded-sm bg-centella-400/60" />
                           <div className="mb-4 px-2 text-center">
-                            <p className="text-[8px] font-bold tracking-widest text-centella-300 sm:text-[10px]">
+                            <p className="text-[8px] font-extrabold tracking-widest text-navy-600 sm:text-[10px]">
                               SKIN1004
                             </p>
-                            <p className="mt-0.5 text-[6px] text-centella-500 sm:text-[8px]">MADAGASCAR</p>
-                            <p className="text-[6px] text-centella-500 sm:text-[8px]">CENTELLA</p>
+                            <p className="mt-0.5 text-[6px] font-semibold text-aqua-600 sm:text-[8px]">MADAGASCAR</p>
+                            <p className="text-[6px] font-semibold text-aqua-600 sm:text-[8px]">CENTELLA</p>
                           </div>
+                          {/* Water line inside bottle */}
+                          <div className="absolute bottom-8 left-2 right-2 h-24 rounded-b-lg bg-gradient-to-t from-aqua-300/30 to-transparent" />
                         </div>
                       </div>
-                      <p className="text-xs text-zinc-600">제품 이미지 Placeholder</p>
+                      <p className="text-xs text-navy-400">Product image placeholder</p>
                     </div>
                   </div>
                 </div>
 
-                {/* Floating stat badge */}
-                <div className="absolute -bottom-3 -right-2 double-bezel sm:-bottom-4 sm:-right-6">
-                  <div className="rounded-[calc(2rem-0.375rem)] bg-surface-raised px-4 py-3">
-                    <p className="text-[10px] font-medium uppercase tracking-wider text-zinc-500">순도</p>
-                    <p className="font-display text-2xl font-bold tabular-nums text-centella-400">100%</p>
+                <div className="absolute -bottom-3 -right-2 glass-card sm:-bottom-4 sm:-right-6">
+                  <div className="rounded-[calc(1.5rem-0.25rem)] bg-white/60 px-4 py-3 backdrop-blur-sm">
+                    <p className="text-[10px] font-semibold uppercase tracking-wider text-navy-400">Purity</p>
+                    <p className="font-display text-2xl font-extrabold tabular-nums text-centella-500">100%</p>
                   </div>
                 </div>
               </motion.div>
 
-              {/* CF video — offset overlap on desktop */}
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -136,15 +138,15 @@ export default function HeroSection() {
                 className="mt-8 lg:absolute lg:-bottom-12 lg:left-8 lg:mt-0 lg:w-[85%]"
               >
                 <div className="mb-3 flex items-center gap-3">
-                  <span className="h-px flex-1 bg-white/10" />
-                  <span className="text-[11px] font-medium uppercase tracking-[0.15em] text-centella-500">
+                  <span className="h-px flex-1 bg-aqua-200" />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-aqua-500">
                     Brand Film
                   </span>
-                  <span className="h-px flex-1 bg-white/10" />
+                  <span className="h-px flex-1 bg-aqua-200" />
                 </div>
                 <VideoPlaceholder
-                  title="SKIN1004 브랜드 CF"
-                  subtitle="마다가스카르 센텔라의 여정"
+                  title="SKIN1004 Brand Film"
+                  subtitle="The Journey of Madagascar Centella"
                   videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
                 />
               </motion.div>
@@ -153,7 +155,6 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* Mechanism — horizontal scroll on mobile, bento on desktop */}
       <div className="section-padding relative py-16 sm:py-24 lg:py-32">
         <div className="section-container">
           <motion.div
@@ -161,19 +162,19 @@ export default function HeroSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-80px" }}
             transition={spring}
-            className="break-keep lg:max-w-xl"
+            className="lg:max-w-xl"
           >
             <span className="eyebrow">How It Works</span>
-            <h2 className="mt-4 font-display text-3xl font-bold leading-snug text-white sm:text-4xl">
-              제품 작용
-              <br className="sm:hidden" /> 메커니즘
+            <h2 className="mt-4 font-display text-3xl font-extrabold leading-snug text-navy-700 sm:text-4xl">
+              Product Action
+              <br className="sm:hidden" /> Mechanism
             </h2>
-            <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-zinc-500">
-              자연이 만든 센텔라의 힘을 과학적으로 정제하여, 피부가 스스로 회복하는 힘을 깨웁니다.
+            <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-navy-500">
+              Nature&apos;s centella power, scientifically refined to awaken your skin&apos;s own
+              ability to heal and recover.
             </p>
           </motion.div>
 
-          {/* Mobile: horizontal snap scroll */}
           <div className="section-full-bleed mt-10 lg:hidden">
             <div className="flex snap-x-mandatory gap-4 overflow-x-auto px-4 pb-4 scrollbar-hide">
               {mechanismSteps.map((item, i) => (
@@ -186,16 +187,15 @@ export default function HeroSection() {
                   className="glass-card w-[85vw] max-w-[320px] shrink-0 snap-center"
                 >
                   <div className="glass-card-body p-6">
-                    <span className="font-display text-3xl font-light text-centella-700">{item.step}</span>
-                    <h3 className="mt-3 text-base font-semibold text-white">{item.title}</h3>
-                    <p className="mt-2 break-keep text-sm leading-relaxed text-zinc-500">{item.desc}</p>
+                    <span className="font-display text-3xl font-light text-aqua-300">{item.step}</span>
+                    <h3 className="mt-3 text-base font-bold text-navy-700">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-navy-500">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
             </div>
           </div>
 
-          {/* Desktop: bento-style staggered grid */}
           <div className="mt-10 hidden gap-4 lg:grid lg:grid-cols-12">
             {mechanismSteps.map((item, i) => (
               <motion.div
@@ -207,15 +207,14 @@ export default function HeroSection() {
                 className={`glass-card ${i === 1 ? "lg:col-span-5 lg:row-span-2" : "lg:col-span-4"} ${i === 0 ? "lg:translate-y-8" : ""} ${i === 2 ? "lg:-translate-y-4" : ""}`}
               >
                 <div className={`glass-card-body ${i === 1 ? "p-10" : "p-8"}`}>
-                  <span className="font-display text-4xl font-light text-centella-700">{item.step}</span>
-                  <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
-                  <p className="mt-3 break-keep text-sm leading-relaxed text-zinc-500">{item.desc}</p>
+                  <span className="font-display text-4xl font-light text-aqua-300">{item.step}</span>
+                  <h3 className="mt-4 text-lg font-bold text-navy-700">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-navy-500">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Mechanism diagram — full bleed on mobile */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -226,17 +225,17 @@ export default function HeroSection() {
             <div className="glass-card-body p-6 sm:p-10">
               <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-center sm:gap-16">
                 {[
-                  { label: "피부 표면", icon: IconDroplet },
-                  { label: "각질층 침투", icon: IconMicroscope },
-                  { label: "진정 & 장벽 강화", icon: IconSprout },
+                  { label: "Skin Surface", icon: IconDroplet },
+                  { label: "Stratum Corneum", icon: IconMicroscope },
+                  { label: "Calm & Strengthen", icon: IconSprout },
                 ].map(({ label, icon: Icon }, i) => (
                   <div key={label} className="flex items-center gap-4 sm:flex-col sm:gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-centella-500/20 bg-centella-500/10 sm:h-20 sm:w-20">
-                      <Icon className="h-6 w-6 text-centella-400 sm:h-7 sm:w-7" />
+                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-aqua-200 bg-aqua-50 sm:h-20 sm:w-20">
+                      <Icon className="h-6 w-6 text-aqua-500 sm:h-7 sm:w-7" />
                     </div>
-                    <p className="break-keep text-xs font-medium text-zinc-400 sm:text-center">{label}</p>
+                    <p className="text-xs font-semibold text-navy-500 sm:text-center">{label}</p>
                     {i < 2 && (
-                      <svg className="hidden h-4 w-8 text-centella-700 sm:block" fill="none" viewBox="0 0 32 16">
+                      <svg className="hidden h-4 w-8 text-aqua-300 sm:block" fill="none" viewBox="0 0 32 16">
                         <path
                           d="M0 8h28M24 4l4 4-4 4"
                           stroke="currentColor"
@@ -249,13 +248,12 @@ export default function HeroSection() {
                   </div>
                 ))}
               </div>
-              <p className="mt-8 text-center text-xs text-zinc-600">작용 메커니즘 다이어그램 Placeholder</p>
+              <p className="mt-8 text-center text-xs text-navy-400">Action mechanism diagram placeholder</p>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Effects — bento grid */}
       <div className="section-padding relative pb-20 sm:pb-28">
         <div className="section-container">
           <motion.div
@@ -266,7 +264,9 @@ export default function HeroSection() {
             className="text-center"
           >
             <span className="eyebrow">Key Benefits</span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-white sm:text-4xl">눈에 보이는 효과</h2>
+            <h2 className="mt-4 font-display text-3xl font-extrabold text-navy-700 sm:text-4xl">
+              Visible Results
+            </h2>
           </motion.div>
 
           <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
@@ -280,17 +280,16 @@ export default function HeroSection() {
                 className={`glass-card ${i === 0 ? "sm:col-span-2 sm:row-span-1" : ""}`}
               >
                 <div className={`glass-card-body text-center ${i === 0 ? "p-8" : "p-5 sm:p-6"}`}>
-                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-centella-500/10 text-centella-400">
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-aqua-50 text-aqua-500">
                     <effect.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-3 break-keep text-sm font-semibold text-white">{effect.title}</h3>
-                  <p className="mt-1.5 break-keep text-xs leading-relaxed text-zinc-500">{effect.desc}</p>
+                  <h3 className="mt-3 text-sm font-bold text-navy-700">{effect.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-navy-500">{effect.desc}</p>
                 </div>
               </motion.div>
             ))}
           </div>
 
-          {/* Effect promo video — 9:16 on mobile, 16:9 on desktop */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -301,22 +300,22 @@ export default function HeroSection() {
             <div className="mx-auto max-w-[280px] sm:max-w-2xl">
               <div className="sm:hidden">
                 <VideoPlaceholder
-                  title="제품 효과 프로모션 영상"
-                  subtitle="Before & After · 실사용 후기"
+                  title="Results Promo Video"
+                  subtitle="Before & After · Real User Reviews"
                   aspectRatio="reel"
                   videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
                 />
               </div>
               <div className="hidden sm:block">
                 <VideoPlaceholder
-                  title="제품 효과 프로모션 영상"
-                  subtitle="Before & After · 실사용 후기"
+                  title="Results Promo Video"
+                  subtitle="Before & After · Real User Reviews"
                   aspectRatio="video"
                   videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
                 />
               </div>
-              <p className="mt-3 text-center text-xs text-zinc-600 sm:hidden">
-                세로 영상 · 모바일 최적화
+              <p className="mt-3 text-center text-xs text-navy-400 sm:hidden">
+                Vertical video · Mobile optimized
               </p>
             </div>
           </motion.div>

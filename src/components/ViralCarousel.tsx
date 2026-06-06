@@ -17,7 +17,7 @@ interface ViralVideo {
 const viralVideos: ViralVideo[] = [
   {
     id: "1",
-    title: "센텔라 앰플 2주 사용 후기",
+    title: "2-Week Centella Ampoule Review",
     creator: "@skincare_diary",
     platform: "TikTok",
     views: "1.2M",
@@ -25,7 +25,7 @@ const viralVideos: ViralVideo[] = [
   },
   {
     id: "2",
-    title: "민감피부 구원템 찾았다",
+    title: "Found My Sensitive Skin Savior",
     creator: "@beauty_korea",
     platform: "Reels",
     views: "890K",
@@ -33,7 +33,7 @@ const viralVideos: ViralVideo[] = [
   },
   {
     id: "3",
-    title: "올리브영 1위 앰플 솔직리뷰",
+    title: "Honest Review: #1 Ampoule",
     creator: "@olive_review",
     platform: "TikTok",
     views: "2.4M",
@@ -41,7 +41,7 @@ const viralVideos: ViralVideo[] = [
   },
   {
     id: "4",
-    title: "속건조 완전 해결",
+    title: "Inner Dryness — Completely Fixed",
     creator: "@dry_skin_saver",
     platform: "Reels",
     views: "560K",
@@ -49,7 +49,7 @@ const viralVideos: ViralVideo[] = [
   },
   {
     id: "5",
-    title: "트러블 진정 3일 챌린지",
+    title: "3-Day Acne Calming Challenge",
     creator: "@clear_skin_journey",
     platform: "TikTok",
     views: "1.8M",
@@ -58,9 +58,9 @@ const viralVideos: ViralVideo[] = [
 ];
 
 const platformStyles: Record<string, string> = {
-  TikTok: "bg-white/10 text-white border border-white/10",
-  Reels: "bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-pink-300 border border-pink-500/20",
-  YouTube: "bg-red-500/15 text-red-300 border border-red-500/20",
+  TikTok: "bg-navy-700/10 text-navy-700 border border-navy-200",
+  Reels: "bg-gradient-to-r from-lavender-100 to-blush-100 text-lavender-600 border border-lavender-200",
+  YouTube: "bg-red-50 text-red-500 border border-red-200",
 };
 
 const spring = { duration: 0.4, ease: [0.16, 1, 0.3, 1] as const };
@@ -115,7 +115,7 @@ export default function ViralCarousel() {
   };
 
   return (
-    <section id="viral" className="relative overflow-hidden border-t border-white/5 py-20 sm:py-32">
+    <section id="videos" className="relative overflow-hidden border-t border-aqua-100/60 py-20 sm:py-32">
       <div className="section-padding">
         <div className="section-container">
           <motion.div
@@ -123,16 +123,17 @@ export default function ViralCarousel() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-            className="break-keep text-center"
+            className="text-center"
           >
             <span className="eyebrow">Social Buzz</span>
-            <h2 className="mt-4 font-display text-3xl font-bold text-white sm:text-5xl">SNS 바이럴 영상</h2>
-            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-zinc-500">
-              TikTok · Instagram Reels에서 화제가 된 실사용 리뷰를 직접 확인하세요.
+            <h2 className="mt-4 font-display text-3xl font-extrabold text-navy-700 sm:text-5xl">
+              Viral Review Videos
+            </h2>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-navy-500">
+              Real user reviews trending on TikTok and Instagram Reels — see the results for yourself.
             </p>
           </motion.div>
 
-          {/* Main featured reel — 9:16 focus, swipe on mobile */}
           <div
             className="relative mx-auto mt-12 max-w-[300px] sm:max-w-[340px]"
             onTouchStart={handleTouchStart}
@@ -155,9 +156,9 @@ export default function ViralCarousel() {
                   videoUrl={viralVideos[activeIndex].videoUrl}
                 />
                 <div className="mt-4 flex items-start justify-between gap-3">
-                  <div className="min-w-0 break-keep">
-                    <p className="text-sm font-semibold text-white">{viralVideos[activeIndex].title}</p>
-                    <p className="mt-0.5 text-xs text-zinc-500">{viralVideos[activeIndex].creator}</p>
+                  <div className="min-w-0">
+                    <p className="text-sm font-bold text-navy-700">{viralVideos[activeIndex].title}</p>
+                    <p className="mt-0.5 text-xs text-navy-400">{viralVideos[activeIndex].creator}</p>
                   </div>
                   <span
                     className={`shrink-0 rounded-full px-3 py-1 text-[10px] font-bold ${platformStyles[viralVideos[activeIndex].platform]}`}
@@ -171,24 +172,23 @@ export default function ViralCarousel() {
             <button
               type="button"
               onClick={handlePrev}
-              className="absolute top-[38%] -left-3 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-void/80 shadow-ambient backdrop-blur-sm transition-all duration-500 ease-spring hover:scale-[1.05] hover:bg-white/10 active:scale-[0.95] sm:-left-16 sm:h-12 sm:w-12"
-              aria-label="이전 영상"
+              className="absolute top-[38%] -left-3 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/80 shadow-glass backdrop-blur-sm transition-all duration-500 ease-spring hover:scale-[1.05] hover:bg-aqua-50 active:scale-[0.95] sm:-left-16 sm:h-12 sm:w-12"
+              aria-label="Previous video"
             >
-              <IconChevronLeft className="text-zinc-300" />
+              <IconChevronLeft className="text-navy-600" />
             </button>
             <button
               type="button"
               onClick={handleNext}
-              className="absolute top-[38%] -right-3 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/10 bg-void/80 shadow-ambient backdrop-blur-sm transition-all duration-500 ease-spring hover:scale-[1.05] hover:bg-white/10 active:scale-[0.95] sm:-right-16 sm:h-12 sm:w-12"
-              aria-label="다음 영상"
+              className="absolute top-[38%] -right-3 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/70 bg-white/80 shadow-glass backdrop-blur-sm transition-all duration-500 ease-spring hover:scale-[1.05] hover:bg-aqua-50 active:scale-[0.95] sm:-right-16 sm:h-12 sm:w-12"
+              aria-label="Next video"
             >
-              <IconChevronRight className="text-zinc-300" />
+              <IconChevronRight className="text-navy-600" />
             </button>
           </div>
 
-          <p className="mt-3 text-center text-xs text-zinc-600 md:hidden">좌우 스와이프로 영상 탐색</p>
+          <p className="mt-3 text-center text-xs text-navy-400 md:hidden">Swipe left or right to browse videos</p>
 
-          {/* Dot indicators */}
           <div className="mt-6 flex justify-center gap-2">
             {viralVideos.map((_, i) => (
               <button
@@ -196,14 +196,13 @@ export default function ViralCarousel() {
                 type="button"
                 onClick={() => goTo(i, i > activeIndex ? 1 : -1)}
                 className={`h-1.5 rounded-full transition-all duration-500 ease-spring ${
-                  i === activeIndex ? "w-8 bg-centella-500" : "w-1.5 bg-white/20 hover:bg-centella-500/50"
+                  i === activeIndex ? "w-8 bg-aqua-500" : "w-1.5 bg-aqua-200 hover:bg-aqua-400"
                 }`}
-                aria-label={`영상 ${i + 1}`}
+                aria-label={`Video ${i + 1}`}
               />
             ))}
           </div>
 
-          {/* Horizontal snap scroll strip */}
           <div className="section-full-bleed mt-10">
             <div
               ref={scrollRef}
@@ -216,15 +215,15 @@ export default function ViralCarousel() {
                   onClick={() => goTo(i, i > activeIndex ? 1 : -1)}
                   className={`reel-card w-[100px] transition-all duration-500 ease-spring sm:w-[120px] ${
                     i === activeIndex
-                      ? "ring-2 ring-centella-500 ring-offset-2 ring-offset-void scale-105"
+                      ? "ring-2 ring-aqua-400 ring-offset-2 ring-offset-surface scale-105"
                       : "opacity-50 hover:opacity-80"
                   }`}
                 >
-                  <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-centella-900/30 to-surface-raised p-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/10 bg-white/10">
-                      <IconPlay className="ml-0.5 h-3 w-3 text-centella-400" />
+                  <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-aqua-50 to-lavender-50 p-3">
+                    <div className="flex h-8 w-8 items-center justify-center rounded-full border border-white/70 bg-white/70 shadow-soft">
+                      <IconPlay className="ml-0.5 h-3 w-3 text-aqua-500" />
                     </div>
-                    <p className="mt-2 line-clamp-2 break-keep text-center text-[9px] font-medium text-zinc-400">
+                    <p className="mt-2 line-clamp-2 text-center text-[9px] font-semibold text-navy-500">
                       {video.title}
                     </p>
                     <span
@@ -238,8 +237,8 @@ export default function ViralCarousel() {
             </div>
           </div>
 
-          <p className="mt-6 text-center text-xs text-zinc-600">
-            * 실제 TikTok/Reels 영상 URL 또는 임베드로 교체 필요
+          <p className="mt-6 text-center text-xs text-navy-400">
+            * Replace with actual TikTok/Reels video URLs or embeds
           </p>
         </div>
       </div>

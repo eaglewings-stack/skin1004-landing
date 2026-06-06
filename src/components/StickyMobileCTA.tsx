@@ -27,13 +27,13 @@ export default function StickyMobileCTA() {
           className="fixed inset-x-0 bottom-0 z-40 md:hidden"
           style={{ paddingBottom: "var(--safe-bottom)" }}
         >
-          <div className="border-t border-white/10 bg-void/90 px-4 py-3 backdrop-blur-xl">
+          <div className="border-t border-white/70 bg-white/80 px-4 py-3 backdrop-blur-xl">
             <a
               href="#buy"
-              className="group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-centella-500 px-6 py-3 text-sm font-semibold text-void transition-all duration-500 ease-spring active:scale-[0.98]"
+              className="group flex min-h-[48px] w-full items-center justify-center gap-2 rounded-full bg-accent-yellow px-6 py-3 text-sm font-bold text-navy-800 shadow-glow-yellow transition-all duration-500 ease-spring active:scale-[0.98]"
             >
-              구매하기
-              <span className="btn-icon-wrap bg-void/20">
+              Shop Now
+              <span className="btn-icon-wrap">
                 <IconArrowRight className="h-4 w-4" />
               </span>
             </a>

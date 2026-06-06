@@ -5,9 +5,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { IconArrowRight } from "./icons";
 
 const navItems = [
-  { label: "제품 소개", href: "#hero" },
-  { label: "상세 정보", href: "#details" },
-  { label: "리뷰 영상", href: "#viral" },
+  { label: "About", href: "#about" },
+  { label: "Videos", href: "#videos" },
 ];
 
 const spring = { duration: 0.5, ease: [0.16, 1, 0.3, 1] as const };
@@ -37,16 +36,16 @@ export default function Header() {
             initial={{ y: -20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={spring}
-            className={`mx-auto flex max-w-3xl items-center justify-between rounded-full border px-4 py-2 transition-all duration-500 ease-spring sm:px-5 ${
+            className={`mx-auto flex max-w-3xl items-center justify-between rounded-full px-4 py-2 transition-all duration-500 ease-spring sm:px-5 ${
               scrolled || menuOpen
-                ? "border-white/10 bg-void/80 shadow-ambient backdrop-blur-xl"
-                : "border-white/5 bg-white/[0.03] backdrop-blur-md"
+                ? "glass-nav shadow-glass-lg"
+                : "border border-white/50 bg-white/40 backdrop-blur-md"
             }`}
             style={{ marginTop: "max(0.75rem, var(--safe-top))" }}
           >
             <a href="#hero" className="flex items-center gap-2 pl-1">
-              <span className="font-display text-lg font-bold tracking-tight text-white sm:text-xl">
-                SKIN<span className="text-centella-400">1004</span>
+              <span className="font-display text-lg font-extrabold tracking-tight text-navy-700 sm:text-xl">
+                SKIN<span className="text-aqua-500">1004</span>
               </span>
             </a>
 
@@ -55,13 +54,13 @@ export default function Header() {
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-xs font-medium text-zinc-400 transition-all duration-500 ease-spring hover:bg-white/5 hover:text-white"
+                  className="rounded-full px-4 py-2 text-xs font-semibold text-navy-500 transition-all duration-500 ease-spring hover:bg-aqua-50 hover:text-navy-700"
                 >
                   {item.label}
                 </a>
               ))}
               <a href="#buy" className="btn-primary !min-h-[40px] !px-5 !py-2 !text-xs group">
-                구매하기
+                Shop Now
                 <span className="btn-icon-wrap">
                   <IconArrowRight />
                 </span>
@@ -70,11 +69,11 @@ export default function Header() {
 
             <button
               type="button"
-              className="flex h-10 w-10 items-center justify-center rounded-full transition-all duration-500 ease-spring hover:bg-white/5 active:scale-[0.95] md:hidden"
+              className="flex h-10 w-10 items-center justify-center rounded-full transition-all duration-500 ease-spring hover:bg-aqua-50 active:scale-[0.95] md:hidden"
               onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={menuOpen ? "메뉴 닫기" : "메뉴 열기"}
+              aria-label={menuOpen ? "Close menu" : "Open menu"}
             >
-              <svg className="h-5 w-5 text-zinc-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="h-5 w-5 text-navy-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 {menuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -93,7 +92,7 @@ export default function Header() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-50 flex flex-col bg-void/95 backdrop-blur-3xl md:hidden"
+            className="fixed inset-0 z-50 flex flex-col bg-white/90 backdrop-blur-3xl md:hidden"
           >
             <div className="flex flex-1 flex-col justify-center px-8 pt-24">
               {navItems.map((item, i) => (
@@ -104,7 +103,7 @@ export default function Header() {
                   initial={{ opacity: 0, y: 32 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ ...spring, delay: i * 0.08 }}
-                  className="break-keep border-b border-white/5 py-5 font-display text-3xl font-semibold text-white"
+                  className="border-b border-aqua-100 py-5 font-display text-3xl font-bold text-navy-700"
                 >
                   {item.label}
                 </motion.a>
@@ -117,7 +116,7 @@ export default function Header() {
                 transition={{ ...spring, delay: 0.32 }}
                 className="btn-primary mt-8 w-full group"
               >
-                구매하기
+                Shop Now
                 <span className="btn-icon-wrap">
                   <IconArrowRight />
                 </span>
