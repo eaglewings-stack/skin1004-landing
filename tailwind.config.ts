@@ -60,6 +60,14 @@ const config: Config = {
         accent: {
           yellow: "#FFE566",
           "yellow-dark": "#E6C200",
+          orange: "#FF6B2C",
+          "orange-dark": "#E85A1A",
+        },
+        sky: {
+          deep: "#4A9FD4",
+          mid: "#6BB5DE",
+          light: "#87CEEB",
+          pale: "#A8D8F0",
         },
         surface: {
           DEFAULT: "#FAFBFD",
@@ -71,6 +79,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-dm-sans)", "DM Sans", "system-ui", "sans-serif"],
         display: ["var(--font-nunito)", "Nunito", "system-ui", "sans-serif"],
+        editorial: ["var(--font-playfair)", "Playfair Display", "Georgia", "serif"],
       },
       borderRadius: {
         "4xl": "2rem",
@@ -87,6 +96,9 @@ const config: Config = {
         "pulse-soft": "pulseSoft 4s ease-in-out infinite",
         "bubble-float": "bubbleFloat 8s ease-in-out infinite",
         "droplet-drift": "dropletDrift 12s ease-in-out infinite",
+        ripple: "ripple 4s ease-out infinite",
+        "ripple-slow": "ripple 6s ease-out infinite",
+        "float-gentle": "floatGentle 5s ease-in-out infinite",
       },
       keyframes: {
         fadeUp: {
@@ -120,6 +132,14 @@ const config: Config = {
           "50%": { transform: "translateY(-8px) translateX(-4px)" },
           "75%": { transform: "translateY(-20px) translateX(3px)" },
         },
+        ripple: {
+          "0%": { transform: "scale(0.8)", opacity: "0.6" },
+          "100%": { transform: "scale(2.2)", opacity: "0" },
+        },
+        floatGentle: {
+          "0%, 100%": { transform: "translateY(0) rotate(0deg)" },
+          "50%": { transform: "translateY(-10px) rotate(2deg)" },
+        },
       },
       boxShadow: {
         glass: "0 8px 32px rgba(27, 42, 74, 0.06), 0 2px 8px rgba(27, 42, 74, 0.04)",
@@ -129,6 +149,7 @@ const config: Config = {
         glow: "0 0 40px rgba(14, 165, 233, 0.15)",
         "glow-centella": "0 0 32px rgba(16, 185, 129, 0.12)",
         "glow-yellow": "0 8px 24px rgba(255, 229, 102, 0.35)",
+        "glow-orange": "0 8px 24px rgba(255, 107, 44, 0.35)",
       },
       backgroundImage: {
         "mesh-pastel":

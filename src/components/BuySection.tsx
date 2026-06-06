@@ -23,10 +23,10 @@ export default function BuySection() {
 
           <div className="relative px-6 py-16 text-center sm:px-16 sm:py-24">
             <span className="eyebrow">Madagascar Centella Ampoule</span>
-            <h2 className="mt-6 font-display text-3xl font-extrabold leading-snug text-navy-700 sm:text-5xl">
+            <h2 className="mt-6 font-editorial text-3xl font-medium leading-snug text-navy-700 sm:text-5xl">
               Awaken Your Skin&apos;s
               <br />
-              Natural Strength
+              <span className="italic text-aqua-600">Natural Strength</span>
             </h2>
             <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-navy-500 sm:text-base">
               Experience the pure energy of Madagascar Centella. The easiest way to start your

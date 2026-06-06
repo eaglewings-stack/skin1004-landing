@@ -91,3 +91,27 @@ export function IconSprout({ className = "h-5 w-5" }: IconProps) {
     </svg>
   );
 }
+
+export function IconFlask({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M9 3h6M10 3v6l-5 9a2 2 0 001.7 3h11.6a2 2 0 001.7-3l-5-9V3" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function IconHeart({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M20.8 4.6a5.5 5.5 0 00-7.8 0L12 5.6l-1-1a5.5 5.5 0 00-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 000-7.8z" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function IconWind({ className = "h-5 w-5" }: IconProps) {
+  return (
+    <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+      <path d="M9.6 9H18a3 3 0 100-6h-.5M5.4 15H14a3 3 0 110 6h-.5M12 3v18" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}

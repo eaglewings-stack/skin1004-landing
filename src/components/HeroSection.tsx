@@ -2,6 +2,8 @@
 
 import { motion } from "framer-motion";
 import VideoPlaceholder from "./VideoPlaceholder";
+import SkyHeroBackground from "./SkyHeroBackground";
+import ExplodedAmpoule from "./ExplodedAmpoule";
 import { IconLeaf, IconShield, IconDroplet, IconSparkle, IconMicroscope, IconSprout } from "./icons";
 
 const effects = [
@@ -43,114 +45,129 @@ const fadeUp = {
 
 export default function HeroSection() {
   return (
-    <section id="hero" className="relative snap-y-proximity overflow-hidden pt-28 sm:pt-32">
-      <div className="section-padding relative pb-8 sm:pb-16">
-        <div className="section-container">
-          <div className="grid items-end gap-10 lg:grid-cols-12 lg:gap-8">
-            <motion.div initial="hidden" animate="visible" className="lg:col-span-5 lg:pb-8">
-              <motion.span custom={0} variants={fadeUp} className="eyebrow">
-                Madagascar Centella
-              </motion.span>
+    <section id="hero" className="relative snap-y-proximity overflow-hidden">
+      {/* Sky hero with exploded product showcase */}
+      <div className="relative isolate min-h-[100dvh] overflow-hidden pt-24 sm:pt-28">
+        <SkyHeroBackground />
+        {/* Fade sky into page pastel background below hero */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 bg-gradient-to-b from-transparent via-white/40 to-surface sm:h-40"
+          aria-hidden="true"
+        />
 
-              <motion.h1
-                custom={1}
-                variants={fadeUp}
-                className="mt-6 font-display text-4xl font-extrabold leading-tight tracking-tight text-navy-700 sm:text-5xl lg:text-6xl"
-              >
-                Madagascar
-                <br />
-                Centella{" "}
-                <span className="text-gradient-water">Ampoule</span>
-              </motion.h1>
-
-              <motion.p
-                custom={2}
-                variants={fadeUp}
-                className="mt-5 max-w-[65ch] text-base leading-relaxed text-navy-500 sm:text-lg"
-              >
-                100% single-extracted Centella Asiatica from the Madagascar highlands. A premium
-                ampoule that restores your skin&apos;s natural resilience — gentle enough for the
-                most sensitive skin.
-              </motion.p>
-
-              <motion.div custom={3} variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
-                <a href="#buy" className="btn-primary group">
-                  Shop Now
-                </a>
-                <a href="#about" className="btn-outline">
-                  Learn More
-                </a>
-              </motion.div>
+        <div className="section-padding relative z-10 pb-16 pt-4 sm:pb-24">
+          <div className="section-container">
+            {/* Orange benefit badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ ...spring, delay: 0.1 }}
+              className="mb-6 flex justify-center sm:mb-8"
+            >
+              <span className="inline-flex items-center rounded-full bg-accent-orange px-5 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-glow-orange sm:text-xs">
+                98% Pure Centella
+              </span>
             </motion.div>
 
-            <div className="relative lg:col-span-7">
+            <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-6">
+              {/* Copy column */}
               <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ ...spring, delay: 0.3 }}
-                className="relative mx-auto max-w-sm lg:max-w-none"
+                initial="hidden"
+                animate="visible"
+                className="text-center lg:col-span-4 lg:text-left"
               >
-                <div className="glass-card mx-auto max-w-[280px] sm:max-w-xs lg:max-w-sm">
-                  <div className="product-hero-visual relative aspect-[3/4] overflow-hidden rounded-[calc(1.5rem-0.25rem)]">
-                    {/* Water ripple layers */}
-                    <div className="absolute inset-0 bg-gradient-to-b from-aqua-200/40 via-transparent to-lavender-100/30" />
-                    <div className="absolute bottom-0 left-0 right-0 h-1/2 bg-gradient-to-t from-aqua-300/20 to-transparent" />
-                    <div className="water-shimmer absolute inset-0 opacity-20" />
+                <motion.span
+                  custom={0}
+                  variants={fadeUp}
+                  className="inline-flex items-center rounded-full border border-white/50 bg-white/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm"
+                >
+                  Madagascar Centella
+                </motion.span>
 
-                    {/* Floating bubbles */}
-                    <div className="absolute left-6 top-12 h-8 w-8 rounded-full border border-white/60 bg-white/30 backdrop-blur-sm animate-bubble-float" />
-                    <div className="absolute right-8 top-24 h-5 w-5 rounded-full border border-white/50 bg-aqua-100/40 animate-float" />
-                    <div className="absolute bottom-32 left-10 h-4 w-4 rounded-full bg-lavender-200/50 animate-float" style={{ animationDelay: "2s" }} />
+                <motion.h1
+                  custom={1}
+                  variants={fadeUp}
+                  className="mt-5 font-editorial text-4xl font-medium leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]"
+                >
+                  Madagascar
+                  <br />
+                  <span className="italic">Centella Ampoule</span>
+                </motion.h1>
 
-                    <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 p-8">
-                      <div className="animate-float">
-                        <div className="relative flex h-48 w-20 flex-col items-center justify-end rounded-t-full rounded-b-lg border border-white/70 bg-gradient-to-b from-white/80 to-aqua-100/60 shadow-glass sm:h-56 sm:w-24">
-                          <div className="absolute -top-1 left-1/2 h-3 w-10 -translate-x-1/2 rounded-full bg-white/90 shadow-soft" />
-                          <div className="mb-auto mt-8 h-3 w-8 rounded-sm bg-centella-400/60" />
-                          <div className="mb-4 px-2 text-center">
-                            <p className="text-[8px] font-extrabold tracking-widest text-navy-600 sm:text-[10px]">
-                              SKIN1004
-                            </p>
-                            <p className="mt-0.5 text-[6px] font-semibold text-aqua-600 sm:text-[8px]">MADAGASCAR</p>
-                            <p className="text-[6px] font-semibold text-aqua-600 sm:text-[8px]">CENTELLA</p>
-                          </div>
-                          {/* Water line inside bottle */}
-                          <div className="absolute bottom-8 left-2 right-2 h-24 rounded-b-lg bg-gradient-to-t from-aqua-300/30 to-transparent" />
-                        </div>
-                      </div>
-                      <p className="text-xs text-navy-400">Product image placeholder</p>
-                    </div>
-                  </div>
-                </div>
+                <motion.p
+                  custom={2}
+                  variants={fadeUp}
+                  className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/85 sm:text-base lg:mx-0"
+                >
+                  Single-extracted Centella Asiatica from the Madagascar highlands.
+                  Scientifically deconstructed — every layer reveals pure, barrier-repairing power.
+                </motion.p>
 
-                <div className="absolute -bottom-3 -right-2 glass-card sm:-bottom-4 sm:-right-6">
-                  <div className="rounded-[calc(1.5rem-0.25rem)] bg-white/60 px-4 py-3 backdrop-blur-sm">
-                    <p className="text-[10px] font-semibold uppercase tracking-wider text-navy-400">Purity</p>
-                    <p className="font-display text-2xl font-extrabold tabular-nums text-centella-500">100%</p>
-                  </div>
-                </div>
+                <motion.div
+                  custom={3}
+                  variants={fadeUp}
+                  className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start"
+                >
+                  <a
+                    href="#buy"
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-bold tracking-wide text-sky-700 shadow-soft transition-all duration-500 ease-spring hover:scale-[1.02] active:scale-[0.98]"
+                  >
+                    Shop Now
+                  </a>
+                  <a
+                    href="#about"
+                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/60 bg-white/15 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-500 ease-spring hover:bg-white/25 active:scale-[0.98]"
+                  >
+                    Learn More
+                  </a>
+                </motion.div>
               </motion.div>
 
-              <motion.div
-                initial={{ opacity: 0, y: 50 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ ...spring, delay: 0.45 }}
-                className="mt-8 lg:absolute lg:-bottom-12 lg:left-8 lg:mt-0 lg:w-[85%]"
-              >
-                <div className="mb-3 flex items-center gap-3">
-                  <span className="h-px flex-1 bg-aqua-200" />
-                  <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-aqua-500">
-                    Brand Film
-                  </span>
-                  <span className="h-px flex-1 bg-aqua-200" />
-                </div>
+              {/* Exploded product showcase */}
+              <div className="relative lg:col-span-8">
+                <ExplodedAmpoule />
+
+                {/* Barrier repair floating badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ ...spring, delay: 0.5 }}
+                  className="absolute -right-1 top-4 sm:right-4 lg:-right-2 lg:top-8"
+                >
+                  <div className="rounded-2xl border border-white/60 bg-white/30 px-4 py-3 backdrop-blur-xl shadow-glass">
+                    <p className="text-[9px] font-semibold uppercase tracking-wider text-white/70">
+                      Key Benefit
+                    </p>
+                    <p className="font-display text-lg font-extrabold text-white sm:text-xl">
+                      Barrier Repair
+                    </p>
+                  </div>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Brand film — below showcase */}
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ ...spring, delay: 0.55 }}
+              className="mx-auto mt-12 max-w-2xl lg:mt-16"
+            >
+              <div className="mb-3 flex items-center gap-3">
+                <span className="h-px flex-1 bg-white/30" />
+                <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70">
+                  Brand Film
+                </span>
+                <span className="h-px flex-1 bg-white/30" />
+              </div>
+              <div className="overflow-hidden rounded-3xl border border-white/40 shadow-glass-lg">
                 <VideoPlaceholder
                   title="SKIN1004 Brand Film"
                   subtitle="The Journey of Madagascar Centella"
                   videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
                 />
-              </motion.div>
-            </div>
+              </div>
+            </motion.div>
           </div>
         </div>
       </div>
