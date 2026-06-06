@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 const clouds = [
@@ -22,6 +23,16 @@ function CloudShape({ className }: { className?: string }) {
 }
 
 export default function SkyHeroBackground() {
+  const [reducedMotion, setReducedMotion] = useState(false);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setReducedMotion(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
   return (
     <div className="pointer-events-none absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
       {/* Sky gradient */}
@@ -37,12 +48,12 @@ export default function SkyHeroBackground() {
 
       {/* Floating orbs */}
       <motion.div
-        animate={{ y: [0, -8, 0], opacity: [0.3, 0.5, 0.3] }}
+        animate={reducedMotion ? undefined : { y: [0, -8, 0], opacity: [0.3, 0.5, 0.3] }}
         transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
         className="absolute left-[15%] top-[20%] h-24 w-24 rounded-full bg-white/15 blur-2xl"
       />
       <motion.div
-        animate={{ y: [0, 6, 0], opacity: [0.2, 0.4, 0.2] }}
+        animate={reducedMotion ? undefined : { y: [0, 6, 0], opacity: [0.2, 0.4, 0.2] }}
         transition={{ duration: 8, repeat: Infinity, ease: "easeInOut", delay: 1 }}
         className="absolute right-[20%] top-[30%] h-32 w-32 rounded-full bg-white/10 blur-3xl"
       />
@@ -53,7 +64,7 @@ export default function SkyHeroBackground() {
           key={i}
           className={`absolute opacity-80 ${cloud.width} ${cloud.height}`}
           style={{ bottom: cloud.bottom, left: cloud.left }}
-          animate={{ x: [0, 20, 0] }}
+          animate={reducedMotion ? undefined : { x: [0, 20, 0] }}
           transition={{
             duration: cloud.duration,
             repeat: Infinity,

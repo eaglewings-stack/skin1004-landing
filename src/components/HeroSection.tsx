@@ -7,27 +7,27 @@ import ExplodedAmpoule from "./ExplodedAmpoule";
 import { IconLeaf, IconShield, IconDroplet, IconSparkle, IconMicroscope, IconSprout } from "./icons";
 
 const effects = [
-  { icon: IconLeaf, title: "Instant Calming", desc: "Rapidly cools and soothes irritated skin" },
-  { icon: IconShield, title: "Barrier Repair", desc: "Rebuilds and strengthens damaged skin barrier" },
-  { icon: IconDroplet, title: "Deep Hydration", desc: "Replenishes moisture from within" },
-  { icon: IconSparkle, title: "Radiant Glow", desc: "Smooth, healthy, even-toned complexion" },
+  { icon: IconLeaf, title: "Soothe", desc: "Instant calm for stressed skin" },
+  { icon: IconShield, title: "Barrier", desc: "Strength you can feel" },
+  { icon: IconDroplet, title: "Hydrate", desc: "72hr deep moisture" },
+  { icon: IconSparkle, title: "Glow", desc: "Radiant, even tone" },
 ];
 
 const mechanismSteps = [
   {
     step: "01",
-    title: "Madagascar Centella Extract",
-    desc: "Centella Asiatica grown in the pristine highlands of Madagascar, refined through a single-extraction method.",
+    title: "Pure Centella Extract",
+    desc: "Madagascar highlands. Single-extraction. 7× more actives.",
   },
   {
     step: "02",
-    title: "Deep Skin Absorption",
-    desc: "Ultra-light ampoule formula penetrates quickly through the stratum corneum to deliver active ingredients.",
+    title: "Deep Absorption",
+    desc: "Weightless formula penetrates fast. Delivers where it matters.",
   },
   {
     step: "03",
-    title: "Barrier Rebuild & Calm",
-    desc: "Madecassoside and Asiaticoside strengthen the skin barrier and suppress inflammatory responses.",
+    title: "Barrier Restore",
+    desc: "Madecassoside calms. Asiaticoside rebuilds. Skin recovers.",
   },
 ];
 
@@ -99,8 +99,7 @@ export default function HeroSection() {
                   variants={fadeUp}
                   className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/85 sm:text-base lg:mx-0"
                 >
-                  Single-extracted Centella Asiatica from the Madagascar highlands.
-                  Scientifically deconstructed — every layer reveals pure, barrier-repairing power.
+                  Pure centella. Barrier repair. Calm skin — scientifically proven, beautifully simple.
                 </motion.p>
 
                 <motion.div
@@ -183,12 +182,11 @@ export default function HeroSection() {
           >
             <span className="eyebrow">How It Works</span>
             <h2 className="mt-4 font-display text-3xl font-extrabold leading-snug text-navy-700 sm:text-4xl">
-              Product Action
-              <br className="sm:hidden" /> Mechanism
+              Science Meets
+              <br className="sm:hidden" /> Pure Nature
             </h2>
             <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-navy-500">
-              Nature&apos;s centella power, scientifically refined to awaken your skin&apos;s own
-              ability to heal and recover.
+              From leaf to layer — every drop engineered to restore, hydrate, and calm.
             </p>
           </motion.div>
 
@@ -282,7 +280,7 @@ export default function HeroSection() {
           >
             <span className="eyebrow">Key Benefits</span>
             <h2 className="mt-4 font-display text-3xl font-extrabold text-navy-700 sm:text-4xl">
-              Visible Results
+              Results You Feel
             </h2>
           </motion.div>
 
