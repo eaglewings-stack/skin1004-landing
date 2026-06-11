@@ -40,47 +40,13 @@ export default function HeroSection() {
 
       <div className="section-padding relative z-10 pb-16 pt-24 sm:pb-24 sm:pt-28">
         <div className="section-container">
-          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
-            <div className="flex w-full flex-col items-center gap-6 lg:items-stretch">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.96 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ ...spring, delay: 0.15 }}
-                className="relative mx-auto w-full max-w-md lg:max-w-none"
-              >
-                <LandingImage
-                  slug={LANDING_IMAGES.heroMain}
-                  alt="TEABLESS Lily Musk White Tea Perfume Body Wash"
-                  priority
-                  aspect="4/5"
-                  rounded="rounded-4xl"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="shadow-glass-lg"
-                />
-
-                <motion.div
-                  initial={{ opacity: 0, x: 16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ ...spring, delay: 0.45 }}
-                  className="absolute -right-2 top-6 sm:right-4 lg:-right-4"
-                >
-                  <div className="rounded-2xl border border-white/70 bg-white/50 px-4 py-3 backdrop-blur-xl shadow-glass">
-                    <p className="text-[9px] font-semibold uppercase tracking-wider text-lavender-400">
-                      Tested
-                    </p>
-                    <p className="font-display text-lg font-extrabold text-navy-700 sm:text-xl">24 Hours</p>
-                    <p className="text-[10px] text-navy-400">Fragrance longevity</p>
-                  </div>
-                </motion.div>
-              </motion.div>
-
-              <div className="flex w-full justify-center">
-                <BrandFilmVideo className="w-full max-w-md lg:max-w-xl" />
-              </div>
-            </div>
-
-            <motion.div initial="hidden" animate="visible" className="text-center lg:text-left">
-              <motion.div custom={0} variants={fadeUp} className="flex flex-wrap justify-center gap-2 lg:justify-start">
+          <div className="mx-auto flex max-w-3xl flex-col items-center gap-10 lg:max-w-4xl lg:gap-12">
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              className="order-2 w-full text-center lg:order-1"
+            >
+              <motion.div custom={0} variants={fadeUp} className="flex flex-wrap justify-center gap-2">
                 <span className="inline-flex items-center rounded-full border border-lavender-200 bg-lavender-50/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-lavender-400">
                   TEABLESS
                 </span>
@@ -102,7 +68,7 @@ export default function HeroSection() {
               <motion.p
                 custom={2}
                 variants={fadeUp}
-                className="mx-auto mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-navy-400 lg:mx-0"
+                className="mx-auto mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-navy-400"
               >
                 Perfume Body Wash · 500g
               </motion.p>
@@ -110,7 +76,7 @@ export default function HeroSection() {
               <motion.p
                 custom={3}
                 variants={fadeUp}
-                className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-navy-500 sm:text-base lg:mx-0"
+                className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-navy-500 sm:text-base"
               >
                 A transparent, calm floral musk — soft and clean as a sip of white tea. Inspired by young
                 leaves veiled in silvery down, this gel wash wraps skin in delicate scent and gentle care.
@@ -119,7 +85,7 @@ export default function HeroSection() {
               <motion.div
                 custom={4}
                 variants={fadeUp}
-                className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start"
+                className="mt-7 flex flex-wrap justify-center gap-3"
               >
                 <a href="#buy" className="btn-primary group">
                   Shop Now
@@ -129,6 +95,42 @@ export default function HeroSection() {
                 </a>
               </motion.div>
             </motion.div>
+
+            <div className="order-1 flex w-full flex-col items-center gap-6 lg:order-2">
+              <motion.div
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ ...spring, delay: 0.15 }}
+                className="relative mx-auto w-full max-w-md lg:max-w-lg"
+              >
+                <LandingImage
+                  slug={LANDING_IMAGES.heroMain}
+                  alt="TEABLESS Lily Musk White Tea Perfume Body Wash"
+                  priority
+                  aspect="4/5"
+                  rounded="rounded-4xl"
+                  sizes="(max-width: 1024px) 100vw, 28rem"
+                  className="shadow-glass-lg"
+                />
+
+                <motion.div
+                  initial={{ opacity: 0, x: 16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ ...spring, delay: 0.45 }}
+                  className="absolute -right-2 top-6 sm:right-4"
+                >
+                  <div className="rounded-2xl border border-white/70 bg-white/50 px-4 py-3 backdrop-blur-xl shadow-glass">
+                    <p className="text-[9px] font-semibold uppercase tracking-wider text-lavender-400">
+                      Tested
+                    </p>
+                    <p className="font-display text-lg font-extrabold text-navy-700 sm:text-xl">24 Hours</p>
+                    <p className="text-[10px] text-navy-400">Fragrance longevity</p>
+                  </div>
+                </motion.div>
+              </motion.div>
+
+              <BrandFilmVideo className="w-full max-w-md lg:max-w-2xl" />
+            </div>
           </div>
 
           <motion.div
