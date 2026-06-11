@@ -6,11 +6,11 @@ import { landingImageCandidates } from "@/lib/landingImages";
 
 type AspectRatio = "4/5" | "4/3" | "16/9" | "1/1";
 
-const aspectClasses: Record<AspectRatio, string> = {
-  "4/5": "aspect-[4/5]",
-  "4/3": "aspect-[4/3]",
-  "16/9": "aspect-video",
-  "1/1": "aspect-square",
+const dimensionsByAspect: Record<AspectRatio, { width: number; height: number }> = {
+  "4/5": { width: 1080, height: 1350 },
+  "4/3": { width: 1200, height: 900 },
+  "16/9": { width: 1920, height: 1080 },
+  "1/1": { width: 1080, height: 1080 },
 };
 
 interface LandingImageProps {
@@ -35,23 +35,27 @@ export default function LandingImage({
   const candidates = landingImageCandidates(slug);
   const [index, setIndex] = useState(0);
   const failed = index >= candidates.length;
+  const { width, height } = dimensionsByAspect[aspect];
 
   return (
     <div
-      className={`relative w-full overflow-hidden border border-white/60 shadow-glass ${aspectClasses[aspect]} ${rounded} ${className}`}
+      className={`relative w-full border border-white/60 bg-gradient-to-br from-lavender-50/80 via-white to-aqua-50/80 shadow-glass ${rounded} ${className}`}
     >
       {!failed ? (
         <Image
           src={candidates[index]}
           alt={alt}
-          fill
+          width={width}
+          height={height}
           priority={priority}
-          className="object-cover"
+          className={`h-auto w-full ${rounded}`}
           sizes={sizes}
           onError={() => setIndex((i) => i + 1)}
         />
       ) : (
-        <div className="absolute inset-0 bg-gradient-to-br from-lavender-50 via-white to-aqua-50" />
+        <div
+          className={`aspect-[4/5] w-full bg-gradient-to-br from-lavender-50 via-white to-aqua-50 ${rounded}`}
+        />
       )}
     </div>
   );

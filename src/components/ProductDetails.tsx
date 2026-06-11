@@ -435,7 +435,7 @@ export default function ProductDetails() {
             <LandingImage
               slug={LANDING_IMAGES.certificationsTrust}
               alt="TEABLESS certifications — sensitive skin tested, vegan, antioxidant verified"
-              aspect="16/9"
+              aspect="4/5"
             />
 
             <div className="text-center">
@@ -477,7 +477,7 @@ export default function ProductDetails() {
             <LandingImage
               slug={LANDING_IMAGES.howToUse}
               alt="How to use TEABLESS — three-step shower ritual"
-              aspect="16/9"
+              aspect="4/5"
             />
 
             <div className="text-center">
