@@ -1,6 +1,6 @@
 # TEABLESS Landing Page — Image Prompt Library
 
-Numbered prompt files for generating on-brand product and lifestyle imagery for the **TEABLESS Perfume Hand & Body Wash — Lily Musk White Tea** landing page. Use these prompts in your external image generation tool (Midjourney, DALL·E, Flux, Stable Diffusion, etc.), then save outputs to the matching path under `public/landing-assets/images/`.
+Numbered prompt files for generating on-brand product and lifestyle imagery for the **TEABLESS Perfume Body Wash — Lily Musk White Tea** landing page. Use these prompts in your external image generation tool (Midjourney, DALL·E, Flux, Stable Diffusion, etc.), then save outputs to the matching path under `public/landing-assets/images/`.
 
 ---
 
@@ -30,7 +30,7 @@ Always keep prompt numbers and image filenames aligned so the landing page can r
 |-------|--------|-------------|
 | **4:5** | 1080 × 1350 | Mobile-first hero, product cards, Instagram-style sections |
 | **1:1** | 1080 × 1080 | Feature grids, thumbnails |
-| **16:9** | 1920 × 1080 | Desktop hero, brand film thumbnails |
+| **16:9** | 1920 × 1080 | Desktop hero, brand film thumbnails, wide section backgrounds |
 | **9:16** | 1080 × 1920 | Reels, Stories, vertical video posters |
 
 Default to **4:5** unless a prompt file specifies otherwise. Export as **WebP** at 80–90% quality for web performance.
@@ -50,32 +50,55 @@ Default to **4:5** unless a prompt file specifies otherwise. Export as **WebP** 
 
 ```
 public/landing-assets/images/
-  01-hero-main.webp          ← Hero main product shot (from 01-hero-main-product-shot.md)
-  02-*.webp                  ← Future prompts
-  ...
+  01-hero-main.webp
+  02-hero-lifestyle.webp
+  03-box-bottle-set.webp
+  04-scent-pyramid-lifestyle.webp
+  05-texture-gel-lather.webp
+  06-100hr-extraction.webp
+  07-exfoliation-smooth-skin.webp
+  08-ceramide-moisture.webp
+  09-certifications-trust.webp
+  10-fragrance-24hr-mood.webp
+  11-brand-story-tea-time.webp
+  12-how-to-use-ritual.webp
 ```
-
-Create subfolders only if a section needs multiple crops (e.g. `images/hero/01-hero-main-mobile.webp`).
 
 ---
 
 ## Brand Constants (all prompts)
 
-- **Product:** TEABLESS Perfume Hand & Body Wash — Lily Musk White Tea
+- **Product:** TEABLESS Perfume Body Wash — Lily Musk White Tea
 - **Bottle:** White faceted octagonal pump bottle, silver pump collar
 - **Label:** Ornate vintage black border frame on white label
 - **Packaging art:** Impressionistic pastel washes — lavender, mint, sky blue, pale yellow
-- **Size:** 500 g / 17.63 oz
-- **Scent story:** Subtle lilies, cozy musk, warm white tea extract, all-day pleasant scent
+- **Size:** 500 g
+- **Scent story:** Lily of the valley, lily, white tea, musk, white musk — transparent calm floral musk
 - **Tone:** Premium K-beauty, photorealistic, luxury lifestyle, soft natural light
 - **Copy language:** English (in page metadata only — **no text burned into images**)
 
 ---
 
-## Current Prompt Index
+## Full Prompt Index (01–12)
 
-| # | File | Output image | Landing placement |
-|---|------|--------------|-------------------|
-| 01 | [01-hero-main-product-shot.md](./01-hero-main-product-shot.md) | `../images/01-hero-main.webp` | Hero section — primary mobile product visual |
+| # | Prompt file | Output image | Aspect | Landing placement |
+|---|-------------|--------------|--------|-------------------|
+| 01 | [01-hero-main-product-shot.md](./01-hero-main-product-shot.md) | `../images/01-hero-main.webp` | 4:5 | Hero — primary mobile product visual |
+| 02 | [02-hero-lifestyle.md](./02-hero-lifestyle.md) | `../images/02-hero-lifestyle.webp` | 4:5 | Hero — lifestyle variant (model + product) |
+| 03 | [03-box-bottle-set.md](./03-box-bottle-set.md) | `../images/03-box-bottle-set.webp` | 1:1 | Product details — packaging showcase |
+| 04 | [04-scent-pyramid-lifestyle.md](./04-scent-pyramid-lifestyle.md) | `../images/04-scent-pyramid-lifestyle.webp` | 4:5 | Scent story — fragrance pyramid mood |
+| 05 | [05-texture-gel-lather.md](./05-texture-gel-lather.md) | `../images/05-texture-gel-lather.webp` | 1:1 | Texture & formula — gel lather macro |
+| 06 | [06-100hr-extraction.md](./06-100hr-extraction.md) | `../images/06-100hr-extraction.webp` | 4:5 | Texture & formula — low-temp extraction |
+| 07 | [07-exfoliation-smooth-skin.md](./07-exfoliation-smooth-skin.md) | `../images/07-exfoliation-smooth-skin.webp` | 4:5 | Benefits — gentle exfoliation / smooth skin |
+| 08 | [08-ceramide-moisture.md](./08-ceramide-moisture.md) | `../images/08-ceramide-moisture.webp` | 1:1 | Benefits — Ceramide NP moisture & barrier |
+| 09 | [09-certifications-trust.md](./09-certifications-trust.md) | `../images/09-certifications-trust.webp` | 16:9 | Certifications — trust badge background |
+| 10 | [10-fragrance-24hr-mood.md](./10-fragrance-24hr-mood.md) | `../images/10-fragrance-24hr-mood.webp` | 4:5 | Scent longevity — 24-hour fragrance mood |
+| 11 | [11-brand-story-tea-time.md](./11-brand-story-tea-time.md) | `../images/11-brand-story-tea-time.webp` | 4:5 | Brand story — tea time ritual |
+| 12 | [12-how-to-use-ritual.md](./12-how-to-use-ritual.md) | `../images/12-how-to-use-ritual.webp` | 16:9 | How to use — 3-step shower ritual |
 
-_Add new rows as prompts are added._
+---
+
+## Related Files
+
+- **Approved copy reference:** [../COPY.md](../COPY.md)
+- **Generated images folder:** [../images/](../images/)

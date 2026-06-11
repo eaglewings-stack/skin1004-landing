@@ -45,7 +45,7 @@ export default function Header() {
           >
             <a href="#hero" className="flex items-center gap-2 pl-1">
               <span className="font-display text-lg font-extrabold tracking-tight text-navy-700 sm:text-xl">
-                SKIN<span className="text-aqua-500">1004</span>
+                TEA<span className="text-lavender-400">BLESS</span>
               </span>
             </a>
 

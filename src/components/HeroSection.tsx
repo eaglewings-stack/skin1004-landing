@@ -1,34 +1,15 @@
 "use client";
 
+import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import VideoPlaceholder from "./VideoPlaceholder";
-import SkyHeroBackground from "./SkyHeroBackground";
-import ExplodedAmpoule from "./ExplodedAmpoule";
-import { IconLeaf, IconShield, IconDroplet, IconSparkle, IconMicroscope, IconSprout } from "./icons";
+import { IconLeaf, IconShield, IconDroplet, IconWind } from "./icons";
 
-const effects = [
-  { icon: IconLeaf, title: "Soothe", desc: "Instant calm for stressed skin" },
-  { icon: IconShield, title: "Barrier", desc: "Strength you can feel" },
-  { icon: IconDroplet, title: "Hydrate", desc: "72hr deep moisture" },
-  { icon: IconSparkle, title: "Glow", desc: "Radiant, even tone" },
-];
-
-const mechanismSteps = [
-  {
-    step: "01",
-    title: "Pure Centella Extract",
-    desc: "Madagascar highlands. Single-extraction. 7× more actives.",
-  },
-  {
-    step: "02",
-    title: "Deep Absorption",
-    desc: "Weightless formula penetrates fast. Delivers where it matters.",
-  },
-  {
-    step: "03",
-    title: "Barrier Restore",
-    desc: "Madecassoside calms. Asiaticoside rebuilds. Skin recovers.",
-  },
+const highlights = [
+  { icon: IconWind, title: "24-Hour Scent", desc: "Lingering lily musk white tea" },
+  { icon: IconDroplet, title: "Gel Lather", desc: "Rich foam, moist cleanse" },
+  { icon: IconLeaf, title: "Tea Therapy", desc: "Green tea micro-particles" },
+  { icon: IconShield, title: "Barrier Care", desc: "Ceramide NP moisture lock" },
 ];
 
 const spring = { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const };
@@ -44,295 +25,149 @@ const fadeUp = {
 };
 
 export default function HeroSection() {
+  const [imgError, setImgError] = useState(false);
+
   return (
-    <section id="hero" className="relative snap-y-proximity overflow-hidden">
-      {/* Sky hero with exploded product showcase */}
-      <div className="relative isolate min-h-[100dvh] overflow-hidden pt-24 sm:pt-28">
-        <SkyHeroBackground />
-        {/* Fade sky into page pastel background below hero */}
-        <div
-          className="pointer-events-none absolute inset-x-0 bottom-0 z-[1] h-32 bg-gradient-to-b from-transparent via-white/40 to-surface sm:h-40"
-          aria-hidden="true"
-        />
+    <section id="hero" className="relative overflow-hidden">
+      <div
+        className="pointer-events-none absolute inset-0"
+        aria-hidden="true"
+        style={{
+          background:
+            "linear-gradient(165deg, #FAF5FF 0%, #F3E8FF 25%, #E0F4FE 55%, #ECFDF5 85%, #FAFBFD 100%)",
+        }}
+      />
+      <div className="pointer-events-none absolute inset-0 bg-mesh-pastel opacity-60" aria-hidden="true" />
 
-        <div className="section-padding relative z-10 pb-16 pt-4 sm:pb-24">
-          <div className="section-container">
-            {/* Orange benefit badge */}
+      <div className="section-padding relative z-10 pb-16 pt-24 sm:pb-24 sm:pt-28">
+        <div className="section-container">
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
+              initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ ...spring, delay: 0.1 }}
-              className="mb-6 flex justify-center sm:mb-8"
+              transition={{ ...spring, delay: 0.15 }}
+              className="relative mx-auto w-full max-w-md lg:max-w-none"
             >
-              <span className="inline-flex items-center rounded-full bg-accent-orange px-5 py-2 text-[11px] font-bold uppercase tracking-[0.18em] text-white shadow-glow-orange sm:text-xs">
-                98% Pure Centella
-              </span>
-            </motion.div>
-
-            <div className="grid items-center gap-8 lg:grid-cols-12 lg:gap-6">
-              {/* Copy column */}
-              <motion.div
-                initial="hidden"
-                animate="visible"
-                className="text-center lg:col-span-4 lg:text-left"
-              >
-                <motion.span
-                  custom={0}
-                  variants={fadeUp}
-                  className="inline-flex items-center rounded-full border border-white/50 bg-white/20 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-white backdrop-blur-sm"
-                >
-                  Madagascar Centella
-                </motion.span>
-
-                <motion.h1
-                  custom={1}
-                  variants={fadeUp}
-                  className="mt-5 font-editorial text-4xl font-medium leading-[1.08] tracking-tight text-white sm:text-5xl lg:text-[3.25rem]"
-                >
-                  Madagascar
-                  <br />
-                  <span className="italic">Centella Ampoule</span>
-                </motion.h1>
-
-                <motion.p
-                  custom={2}
-                  variants={fadeUp}
-                  className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-white/85 sm:text-base lg:mx-0"
-                >
-                  Pure centella. Barrier repair. Calm skin — scientifically proven, beautifully simple.
-                </motion.p>
-
-                <motion.div
-                  custom={3}
-                  variants={fadeUp}
-                  className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start"
-                >
-                  <a
-                    href="#buy"
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-white px-8 py-4 text-sm font-bold tracking-wide text-sky-700 shadow-soft transition-all duration-500 ease-spring hover:scale-[1.02] active:scale-[0.98]"
+              <div className="relative aspect-[4/5] overflow-hidden rounded-4xl border border-white/70 shadow-glass-lg">
+                {!imgError ? (
+                  <Image
+                    src="/landing-assets/images/01-hero-main.webp"
+                    alt="TEABLESS Lily Musk White Tea Perfume Body Wash"
+                    fill
+                    priority
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    onError={() => setImgError(true)}
+                  />
+                ) : (
+                  <div
+                    className="absolute inset-0 flex flex-col items-center justify-center p-8"
+                    style={{
+                      background:
+                        "linear-gradient(145deg, rgba(243,232,255,0.95) 0%, rgba(224,244,254,0.9) 45%, rgba(236,253,245,0.85) 100%)",
+                    }}
                   >
-                    Shop Now
-                  </a>
-                  <a
-                    href="#about"
-                    className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-white/60 bg-white/15 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition-all duration-500 ease-spring hover:bg-white/25 active:scale-[0.98]"
-                  >
-                    Learn More
-                  </a>
-                </motion.div>
-              </motion.div>
-
-              {/* Exploded product showcase */}
-              <div className="relative lg:col-span-8">
-                <ExplodedAmpoule />
-
-                {/* Barrier repair floating badge */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ ...spring, delay: 0.5 }}
-                  className="absolute -right-1 top-4 sm:right-4 lg:-right-2 lg:top-8"
-                >
-                  <div className="rounded-2xl border border-white/60 bg-white/30 px-4 py-3 backdrop-blur-xl shadow-glass">
-                    <p className="text-[9px] font-semibold uppercase tracking-wider text-white/70">
-                      Key Benefit
-                    </p>
-                    <p className="font-display text-lg font-extrabold text-white sm:text-xl">
-                      Barrier Repair
+                    <div
+                      className="h-56 w-28 rounded-b-3xl rounded-t-lg sm:h-64 sm:w-32"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(243,232,255,0.9) 50%, rgba(167,243,208,0.35) 100%)",
+                        boxShadow: "0 20px 56px rgba(192,132,252,0.12), inset 0 2px 8px rgba(255,255,255,0.95)",
+                      }}
+                    />
+                    <p className="mt-6 text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-navy-400">
+                      Add 01-hero-main.webp
                     </p>
                   </div>
-                </motion.div>
+                )}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/30 to-transparent" />
               </div>
-            </div>
 
-            {/* Brand film — below showcase */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ ...spring, delay: 0.55 }}
-              className="mx-auto mt-12 max-w-2xl lg:mt-16"
-            >
-              <div className="mb-3 flex items-center gap-3">
-                <span className="h-px flex-1 bg-white/30" />
-                <span className="text-[11px] font-semibold uppercase tracking-[0.15em] text-white/70">
-                  Brand Film
+              <motion.div
+                initial={{ opacity: 0, x: 16 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ ...spring, delay: 0.45 }}
+                className="absolute -right-2 top-6 sm:right-4 lg:-right-4"
+              >
+                <div className="rounded-2xl border border-white/70 bg-white/50 px-4 py-3 backdrop-blur-xl shadow-glass">
+                  <p className="text-[9px] font-semibold uppercase tracking-wider text-lavender-400">
+                    Tested
+                  </p>
+                  <p className="font-display text-lg font-extrabold text-navy-700 sm:text-xl">24 Hours</p>
+                  <p className="text-[10px] text-navy-400">Fragrance longevity</p>
+                </div>
+              </motion.div>
+            </motion.div>
+
+            <motion.div initial="hidden" animate="visible" className="text-center lg:text-left">
+              <motion.div custom={0} variants={fadeUp} className="flex flex-wrap justify-center gap-2 lg:justify-start">
+                <span className="inline-flex items-center rounded-full border border-lavender-200 bg-lavender-50/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-lavender-400">
+                  TEABLESS
                 </span>
-                <span className="h-px flex-1 bg-white/30" />
-              </div>
-              <div className="overflow-hidden rounded-3xl border border-white/40 shadow-glass-lg">
-                <VideoPlaceholder
-                  title="SKIN1004 Brand Film"
-                  subtitle="The Journey of Madagascar Centella"
-                  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                />
-              </div>
+                <span className="inline-flex items-center rounded-full border border-centella-200 bg-centella-50/80 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-centella-600">
+                  Gel Texture
+                </span>
+              </motion.div>
+
+              <motion.h1
+                custom={1}
+                variants={fadeUp}
+                className="mt-5 font-editorial text-4xl font-medium leading-[1.08] tracking-tight text-navy-700 sm:text-5xl lg:text-[3.25rem]"
+              >
+                Lily Musk
+                <br />
+                <span className="italic text-lavender-400">White Tea</span>
+              </motion.h1>
+
+              <motion.p
+                custom={2}
+                variants={fadeUp}
+                className="mx-auto mt-2 text-sm font-semibold uppercase tracking-[0.12em] text-navy-400 lg:mx-0"
+              >
+                Perfume Body Wash · 500g
+              </motion.p>
+
+              <motion.p
+                custom={3}
+                variants={fadeUp}
+                className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-navy-500 sm:text-base lg:mx-0"
+              >
+                A transparent, calm floral musk — soft and clean as a sip of white tea. Inspired by young
+                leaves veiled in silvery down, this gel wash wraps skin in delicate scent and gentle care.
+              </motion.p>
+
+              <motion.div
+                custom={4}
+                variants={fadeUp}
+                className="mt-7 flex flex-wrap justify-center gap-3 lg:justify-start"
+              >
+                <a href="#buy" className="btn-primary group">
+                  Shop Now
+                </a>
+                <a href="#about" className="btn-outline">
+                  Discover the Scent
+                </a>
+              </motion.div>
             </motion.div>
           </div>
-        </div>
-      </div>
 
-      <div className="section-padding relative py-16 sm:py-24 lg:py-32">
-        <div className="section-container">
           <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-80px" }}
-            transition={spring}
-            className="lg:max-w-xl"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...spring, delay: 0.5 }}
+            className="mt-14 grid grid-cols-2 gap-3 sm:mt-16 sm:grid-cols-4 sm:gap-4"
           >
-            <span className="eyebrow">How It Works</span>
-            <h2 className="mt-4 font-display text-3xl font-extrabold leading-snug text-navy-700 sm:text-4xl">
-              Science Meets
-              <br className="sm:hidden" /> Pure Nature
-            </h2>
-            <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-navy-500">
-              From leaf to layer — every drop engineered to restore, hydrate, and calm.
-            </p>
-          </motion.div>
-
-          <div className="section-full-bleed mt-10 lg:hidden">
-            <div className="flex snap-x-mandatory gap-4 overflow-x-auto px-4 pb-4 scrollbar-hide">
-              {mechanismSteps.map((item, i) => (
-                <motion.div
-                  key={item.step}
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1, ...spring }}
-                  className="glass-card w-[85vw] max-w-[320px] shrink-0 snap-center"
-                >
-                  <div className="glass-card-body p-6">
-                    <span className="font-display text-3xl font-light text-aqua-300">{item.step}</span>
-                    <h3 className="mt-3 text-base font-bold text-navy-700">{item.title}</h3>
-                    <p className="mt-2 text-sm leading-relaxed text-navy-500">{item.desc}</p>
+            {highlights.map((item, i) => (
+              <div key={item.title} className={`glass-card ${i === 0 ? "sm:col-span-1" : ""}`}>
+                <div className="glass-card-body p-5 text-center sm:p-6">
+                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-lavender-50 text-lavender-400">
+                    <item.icon className="h-5 w-5" />
                   </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          <div className="mt-10 hidden gap-4 lg:grid lg:grid-cols-12">
-            {mechanismSteps.map((item, i) => (
-              <motion.div
-                key={item.step}
-                initial={{ opacity: 0, y: 24 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12, ...spring }}
-                className={`glass-card ${i === 1 ? "lg:col-span-5 lg:row-span-2" : "lg:col-span-4"} ${i === 0 ? "lg:translate-y-8" : ""} ${i === 2 ? "lg:-translate-y-4" : ""}`}
-              >
-                <div className={`glass-card-body ${i === 1 ? "p-10" : "p-8"}`}>
-                  <span className="font-display text-4xl font-light text-aqua-300">{item.step}</span>
-                  <h3 className="mt-4 text-lg font-bold text-navy-700">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-navy-500">{item.desc}</p>
+                  <h3 className="mt-3 text-sm font-bold text-navy-700">{item.title}</h3>
+                  <p className="mt-1.5 text-xs leading-relaxed text-navy-500">{item.desc}</p>
                 </div>
-              </motion.div>
+              </div>
             ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={spring}
-            className="mt-12 glass-card"
-          >
-            <div className="glass-card-body p-6 sm:p-10">
-              <div className="flex flex-col items-center gap-8 sm:flex-row sm:justify-center sm:gap-16">
-                {[
-                  { label: "Skin Surface", icon: IconDroplet },
-                  { label: "Stratum Corneum", icon: IconMicroscope },
-                  { label: "Calm & Strengthen", icon: IconSprout },
-                ].map(({ label, icon: Icon }, i) => (
-                  <div key={label} className="flex items-center gap-4 sm:flex-col sm:gap-4">
-                    <div className="flex h-16 w-16 items-center justify-center rounded-full border border-aqua-200 bg-aqua-50 sm:h-20 sm:w-20">
-                      <Icon className="h-6 w-6 text-aqua-500 sm:h-7 sm:w-7" />
-                    </div>
-                    <p className="text-xs font-semibold text-navy-500 sm:text-center">{label}</p>
-                    {i < 2 && (
-                      <svg className="hidden h-4 w-8 text-aqua-300 sm:block" fill="none" viewBox="0 0 32 16">
-                        <path
-                          d="M0 8h28M24 4l4 4-4 4"
-                          stroke="currentColor"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
-                    )}
-                  </div>
-                ))}
-              </div>
-              <p className="mt-8 text-center text-xs text-navy-400">Action mechanism diagram placeholder</p>
-            </div>
-          </motion.div>
-        </div>
-      </div>
-
-      <div className="section-padding relative pb-20 sm:pb-28">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={spring}
-            className="text-center"
-          >
-            <span className="eyebrow">Key Benefits</span>
-            <h2 className="mt-4 font-display text-3xl font-extrabold text-navy-700 sm:text-4xl">
-              Results You Feel
-            </h2>
-          </motion.div>
-
-          <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
-            {effects.map((effect, i) => (
-              <motion.div
-                key={effect.title}
-                initial={{ opacity: 0, scale: 0.95 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.08, ...spring }}
-                className={`glass-card ${i === 0 ? "sm:col-span-2 sm:row-span-1" : ""}`}
-              >
-                <div className={`glass-card-body text-center ${i === 0 ? "p-8" : "p-5 sm:p-6"}`}>
-                  <div className="mx-auto flex h-10 w-10 items-center justify-center rounded-full bg-aqua-50 text-aqua-500">
-                    <effect.icon className="h-5 w-5" />
-                  </div>
-                  <h3 className="mt-3 text-sm font-bold text-navy-700">{effect.title}</h3>
-                  <p className="mt-1.5 text-xs leading-relaxed text-navy-500">{effect.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={spring}
-            className="mt-12"
-          >
-            <div className="mx-auto max-w-[280px] sm:max-w-2xl">
-              <div className="sm:hidden">
-                <VideoPlaceholder
-                  title="Results Promo Video"
-                  subtitle="Before & After · Real User Reviews"
-                  aspectRatio="reel"
-                  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                />
-              </div>
-              <div className="hidden sm:block">
-                <VideoPlaceholder
-                  title="Results Promo Video"
-                  subtitle="Before & After · Real User Reviews"
-                  aspectRatio="video"
-                  videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                />
-              </div>
-              <p className="mt-3 text-center text-xs text-navy-400 sm:hidden">
-                Vertical video · Mobile optimized
-              </p>
-            </div>
           </motion.div>
         </div>
       </div>

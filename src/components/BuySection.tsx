@@ -16,21 +16,21 @@ export default function BuySection() {
           transition={{ duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
           className="relative overflow-hidden rounded-5xl border border-white/70 shadow-glass-lg"
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-aqua-100 via-lavender-50 to-blush-50" />
+          <div className="absolute inset-0 bg-gradient-to-br from-lavender-100 via-aqua-50 to-centella-50" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(186,230,253,0.5),transparent_60%)]" />
           <div className="absolute -right-20 -top-20 h-60 w-60 animate-pulse-soft rounded-full bg-aqua-200/40 blur-3xl" />
           <div className="absolute -bottom-16 -left-16 h-48 w-48 animate-bubble-float rounded-full bg-lavender-200/30 blur-2xl" />
 
           <div className="relative px-6 py-16 text-center sm:px-16 sm:py-24">
-            <span className="eyebrow">Madagascar Centella Ampoule</span>
+            <span className="eyebrow">Lily Musk White Tea · 500g</span>
             <h2 className="mt-6 font-editorial text-3xl font-medium leading-snug text-navy-700 sm:text-5xl">
-              Awaken Your Skin&apos;s
+              Your Daily
               <br />
-              <span className="italic text-aqua-600">Natural Strength</span>
+              <span className="italic text-lavender-400">Tea Time Ritual</span>
             </h2>
             <p className="mx-auto mt-5 max-w-md text-sm leading-relaxed text-navy-500 sm:text-base">
-              Experience the pure energy of Madagascar Centella. The easiest way to start your
-              most effective skincare routine — today.
+              TEABLESS Perfume Body Wash — a transparent floral musk that lingers for 24 hours while
+              gently cleansing and nourishing your skin.
             </p>
 
             <div className="mt-10 flex flex-col items-center gap-4">

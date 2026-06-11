@@ -6,12 +6,12 @@ export default function Footer() {
           <div className="flex flex-col items-center justify-between gap-8 sm:flex-row">
             <div className="text-center sm:text-left">
               <p className="font-display text-lg font-extrabold text-navy-700">
-                SKIN<span className="text-aqua-500">1004</span>
+                TEA<span className="text-lavender-400">BLESS</span>
               </p>
               <p className="mt-2 max-w-xs text-xs leading-relaxed text-navy-400">
-                A K-beauty brand obsessed with Madagascar Centella
+                Delicate tea-inspired body care — scent as daily comfort
               </p>
-              <p className="mt-3 text-xs text-navy-300">© 2026 SKIN1004. All rights reserved.</p>
+              <p className="mt-3 text-xs text-navy-300">© 2026 TEABLESS. All rights reserved.</p>
             </div>
             <div className="flex gap-6 text-xs text-navy-400">
               <a href="#" className="transition-colors duration-500 ease-spring hover:text-aqua-600">

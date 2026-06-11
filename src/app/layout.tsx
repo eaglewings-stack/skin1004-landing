@@ -25,12 +25,13 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "SKIN1004 | Madagascar Centella Ampoule",
+  title: "TEABLESS | Lily Musk White Tea Perfume Body Wash",
   description:
-    "Pure Madagascar Centella power. SKIN1004 Madagascar Centella Ampoule — a calming & barrier-strengthening solution for sensitive skin.",
+    "TEABLESS Lily Musk White Tea Perfume Body Wash — 24-hour fragrance longevity, gel lather with green tea therapy, Ceramide NP barrier care. Made in Korea, 500g.",
   openGraph: {
-    title: "SKIN1004 Madagascar Centella Ampoule",
-    description: "Pure centella. Awaken your skin's natural strength.",
+    title: "TEABLESS Lily Musk White Tea Perfume Body Wash",
+    description:
+      "A transparent floral musk body wash inspired by white tea. Gentle cleansing, lasting scent, tea-time comfort every day.",
     type: "website",
   },
 };

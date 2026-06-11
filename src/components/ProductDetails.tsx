@@ -6,332 +6,283 @@ import {
   IconShield,
   IconDroplet,
   IconSparkle,
-  IconMicroscope,
-  IconSprout,
   IconFlask,
   IconHeart,
   IconWind,
+  IconMicroscope,
+  IconSprout,
 } from "./icons";
 
-const statBadges = [
-  { value: "98%", label: "Pure Centella", accent: "border-aqua-200 bg-aqua-50/80 text-aqua-600" },
-  { value: "72hr", label: "Hydration", accent: "border-sky-light/40 bg-white/70 text-sky-deep" },
-  { value: "99%", label: "Agree It Soothes", accent: "border-centella-200 bg-centella-50/80 text-centella-600" },
-  { value: "87%", label: "Saw Improvement", accent: "border-aqua-200 bg-aqua-50/80 text-aqua-600" },
+const scentNotes = [
+  {
+    layer: "Top",
+    notes: "Lily of the Valley",
+    desc: "A transparent floral opening — crisp, refreshing, and quietly luminous.",
+    accent: "border-lavender-200 bg-lavender-50/80 text-lavender-400",
+  },
+  {
+    layer: "Mid",
+    notes: "Lily · White Tea",
+    desc: "Petals unfold with warmth; white tea brings a serene, unhurried calm.",
+    accent: "border-aqua-200 bg-aqua-50/80 text-aqua-600",
+  },
+  {
+    layer: "Base",
+    notes: "Musk · White Musk",
+    desc: "A clear, soft finish — like white mist settling on skin after tea.",
+    accent: "border-centella-200 bg-centella-50/80 text-centella-600",
+  },
 ];
 
-const benefitIcons = [
-  { icon: IconHeart, label: "Soothe", desc: "Instant calm" },
-  { icon: IconShield, label: "Barrier", desc: "Strength restored" },
-  { icon: IconDroplet, label: "Hydrate", desc: "Deep moisture" },
-  { icon: IconSparkle, label: "Glow", desc: "Radiant finish" },
+const benefits = [
+  {
+    icon: IconSparkle,
+    value: "59.82%",
+    label: "Keratin improvement*",
+    desc: "Green tea powder micro-particles gently refine without irritation.",
+  },
+  {
+    icon: IconShield,
+    value: "Ceramide NP",
+    label: "Barrier support",
+    desc: "White tea actives help reinforce skin's moisture barrier after shower.",
+  },
+  {
+    icon: IconDroplet,
+    value: "Lasting",
+    label: "Post-shower moisture",
+    desc: "Skin feels moist and smooth — never tight, never stripped.",
+  },
+];
+
+const certifications = [
+  {
+    title: "Sensitive Skin Test",
+    org: "Korea Institute of Dermatological Sciences",
+    detail: "31 subjects · irritation test completed",
+  },
+  {
+    title: "Skin Irritation Test",
+    org: "SkinMed",
+    detail: "30 subjects · completed",
+  },
+  {
+    title: "Antioxidant Effect",
+    org: "Intertek",
+    detail: "DPPH method · completed",
+  },
+  {
+    title: "Korea Vegan",
+    org: "Certified",
+    detail: "No animal-derived ingredients",
+  },
 ];
 
 const ingredients = [
   {
     icon: IconLeaf,
-    name: "Centella Asiatica",
-    tag: "100%",
-    benefit: "Calm · Barrier support",
+    name: "White Tea",
+    tag: "Hero",
+    benefit: "Antioxidant · delicate scent",
     color: "text-centella-600 bg-centella-50 border-centella-200",
   },
   {
-    icon: IconFlask,
-    name: "Madecassoside",
-    tag: "Active",
-    benefit: "Anti-inflammatory",
-    color: "text-aqua-600 bg-aqua-50 border-aqua-200",
-  },
-  {
     icon: IconSprout,
-    name: "Asiaticoside",
-    tag: "Active",
-    benefit: "Elasticity · Repair",
-    color: "text-lavender-400 bg-lavender-50 border-lavender-200",
+    name: "Green Tea Powder",
+    tag: "Texture",
+    benefit: "Gentle exfoliation · TEA therapy",
+    color: "text-aqua-600 bg-aqua-50 border-aqua-200",
   },
   {
     icon: IconShield,
-    name: "Madecassic Acid",
+    name: "Ceramide NP",
+    tag: "Barrier",
+    benefit: "Moisture lock · skin support",
+    color: "text-lavender-400 bg-lavender-50 border-lavender-200",
+  },
+  {
+    icon: IconFlask,
+    name: "Black Tea Ferment",
     tag: "Active",
-    benefit: "Regeneration",
+    benefit: "Deep, soft nourishment",
     color: "text-aqua-600 bg-aqua-50 border-aqua-200",
+  },
+  {
+    icon: IconHeart,
+    name: "Botanical Blend",
+    tag: "Complex",
+    benefit: "Lavender · Peony · Green Tea extracts",
+    color: "text-lavender-400 bg-lavender-50 border-lavender-200",
+  },
+  {
+    icon: IconWind,
+    name: "Premium Fragrance",
+    tag: "Scent",
+    benefit: "Lily musk white tea · 24hr longevity",
+    color: "text-centella-600 bg-centella-50 border-centella-200",
   },
 ];
 
 const usageSteps = [
-  { step: "1", title: "Prep", text: "After cleansing, tone to refine skin." },
-  { step: "2", title: "Apply", text: "2–3 drops. Spread across face." },
-  { step: "3", title: "Press", text: "Pat gently. Let it sink in." },
+  {
+    step: "1",
+    title: "Dispense",
+    text: "Apply an appropriate amount to wet hands or a shower towel.",
+  },
+  {
+    step: "2",
+    title: "Lather",
+    text: "Work into a rich, creamy foam and gently wash your body.",
+  },
+  {
+    step: "3",
+    title: "Rinse",
+    text: "Rinse thoroughly. Enjoy soft, scented skin that lasts.",
+  },
+];
+
+const productInfo = [
+  { label: "Product Name", value: "TEABLESS Lily Musk White Tea Perfume Body Wash" },
+  { label: "Volume", value: "500g" },
+  { label: "Origin", value: "Made in Korea" },
+  { label: "Manufacturer", value: "CNF Co., Ltd." },
+  { label: "Distributor", value: "LOC Co., Ltd." },
 ];
 
 const spring = { duration: 0.6, ease: [0.16, 1, 0.3, 1] as const };
 
-function StatBadge({ value, label, accent }: { value: string; label: string; accent: string }) {
-  return (
-    <div
-      className={`flex h-[7.5rem] w-[7.5rem] shrink-0 flex-col items-center justify-center rounded-full border shadow-glass backdrop-blur-md sm:h-[8.5rem] sm:w-[8.5rem] ${accent}`}
-    >
-      <p className="font-display text-2xl font-extrabold leading-none sm:text-3xl">{value}</p>
-      <p className="mt-1.5 max-w-[5.5rem] text-center text-[10px] font-semibold leading-tight tracking-wide sm:text-[11px]">
-        {label}
-      </p>
-    </div>
-  );
-}
-
-function DetailsBackground() {
+function SectionBackground() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
-      <div className="absolute inset-0 bg-gradient-to-b from-aqua-50/60 via-white/40 to-aqua-100/30" />
+      <div className="absolute inset-0 bg-gradient-to-b from-lavender-50/60 via-white/40 to-aqua-50/30" />
       <div className="absolute inset-0 bg-mesh-pastel opacity-50" />
-
-      <div
-        className="absolute inset-0 opacity-[0.12]"
-        style={{
-          background:
-            "linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.7) 50%, transparent 60%)",
-          backgroundSize: "200% 100%",
-          animation: "shimmer 8s linear infinite",
-        }}
-      />
-
-      {[0, 1, 2, 3].map((i) => (
-        <div
-          key={i}
-          className="water-ripple-ring animate-ripple"
-          style={{
-            width: 100 + i * 70,
-            height: 100 + i * 70,
-            top: `${20 + i * 12}%`,
-            left: `${55 + i * 4}%`,
-            animationDelay: `${i * 1.2}s`,
-          }}
-        />
-      ))}
-
-      {[
-        { top: "12%", left: "8%", delay: 0 },
-        { top: "38%", left: "92%", delay: 1.4 },
-        { top: "68%", left: "15%", delay: 2.2 },
-        { top: "52%", left: "78%", delay: 0.6 },
-        { top: "82%", left: "45%", delay: 3 },
-      ].map((d, i) => (
-        <div
-          key={i}
-          className="absolute animate-droplet-drift"
-          style={{ top: d.top, left: d.left, animationDelay: `${d.delay}s` }}
-        >
-          <div className="h-2.5 w-2.5 rounded-full bg-aqua-300/50 backdrop-blur-sm sm:h-3 sm:w-3" />
-        </div>
-      ))}
-
-      <div className="absolute left-[3%] top-[35%] h-52 w-52 rounded-full bg-aqua-200/30 blur-3xl animate-pulse-soft" />
-      <div className="absolute bottom-[10%] right-[5%] h-64 w-64 rounded-full bg-sky-pale/40 blur-3xl animate-pulse-soft [animation-delay:2s]" />
-      <div className="absolute bottom-[40%] left-[35%] h-36 w-36 rounded-full bg-centella-100/25 blur-2xl animate-float-gentle" />
-    </div>
-  );
-}
-
-function FloatingProductVisual() {
-  return (
-    <div className="ingredient-spotlight relative">
-      <div className="relative aspect-[4/5] min-h-[340px] sm:aspect-[3/4] sm:min-h-[420px]">
-        <div className="absolute inset-0 bg-gradient-to-br from-aqua-100/80 via-white/70 to-sky-pale/50" />
-
-        {[0, 1, 2].map((i) => (
-          <div
-            key={i}
-            className="absolute left-1/2 top-[55%] -translate-x-1/2 rounded-full border border-aqua-300/25"
-            style={{
-              width: `${30 + i * 22}%`,
-              height: `${30 + i * 22}%`,
-              animation: `ripple ${5 + i}s ease-out infinite`,
-              animationDelay: `${i * 0.9}s`,
-            }}
-          />
-        ))}
-
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[42%]">
-          <div className="relative animate-float-gentle">
-            <div className="mx-auto h-4 w-16 rounded-t-lg bg-navy-200/25" />
-            <div
-              className="mx-auto h-48 w-32 rounded-b-3xl rounded-t-lg sm:h-56 sm:w-36"
-              style={{
-                background:
-                  "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(224,244,254,0.9) 35%, rgba(167,243,208,0.35) 100%)",
-                boxShadow: "0 20px 56px rgba(74,159,212,0.12), inset 0 2px 8px rgba(255,255,255,0.95)",
-              }}
-            >
-              <div className="absolute inset-x-5 top-10 h-28 rounded-2xl bg-aqua-100/40" />
-              <p className="absolute inset-x-0 bottom-7 text-center text-[9px] font-bold uppercase tracking-[0.22em] text-navy-400">
-                SKIN1004
-              </p>
-            </div>
-            <div className="absolute -right-3 top-8 h-8 w-8 rounded-full bg-white/60 blur-sm" />
-          </div>
-        </div>
-
-        <div className="absolute bottom-[10%] left-1/2 flex -translate-x-1/2 gap-2">
-          {[IconMicroscope, IconWind, IconSprout].map((Icon, i) => (
-            <div
-              key={i}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/70 bg-white/50 shadow-glass backdrop-blur-md"
-            >
-              <Icon className="h-4 w-4 text-aqua-500" />
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function SerumTextureArt() {
-  return (
-    <div className="texture-visual aspect-[4/3] w-full sm:aspect-[16/10]">
-      <div className="absolute inset-0 opacity-35">
-        {[0, 1, 2, 3].map((i) => (
-          <div
-            key={i}
-            className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-aqua-300/30"
-            style={{
-              width: `${40 + i * 25}%`,
-              height: `${40 + i * 25}%`,
-              animation: `ripple ${4 + i}s ease-out infinite`,
-              animationDelay: `${i * 0.8}s`,
-            }}
-          />
-        ))}
-      </div>
-
-      <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[45%]">
-        <div className="relative animate-float-gentle">
-          <div
-            className="h-28 w-20 rounded-b-[50%] rounded-t-[45%] sm:h-36 sm:w-24"
-            style={{
-              background:
-                "linear-gradient(180deg, rgba(167,243,208,0.9) 0%, rgba(110,231,183,0.7) 40%, rgba(52,211,153,0.5) 100%)",
-              boxShadow: "inset 0 -8px 20px rgba(255,255,255,0.4), 0 8px 32px rgba(16,185,129,0.15)",
-            }}
-          />
-          <div className="absolute left-[30%] top-[15%] h-8 w-3 rounded-full bg-white/50 blur-[1px]" />
-        </div>
-      </div>
-
-      <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-white/60 to-transparent" />
+      <div className="absolute left-[5%] top-[20%] h-52 w-52 rounded-full bg-lavender-200/25 blur-3xl animate-pulse-soft" />
+      <div className="absolute bottom-[15%] right-[8%] h-64 w-64 rounded-full bg-aqua-100/35 blur-3xl animate-pulse-soft [animation-delay:2s]" />
     </div>
   );
 }
 
 export default function ProductDetails() {
   return (
-    <section id="about" className="relative overflow-hidden border-t border-aqua-100/40 py-20 sm:py-28 lg:py-36">
-      <DetailsBackground />
+    <section id="about" className="relative overflow-hidden border-t border-lavender-100/50 py-20 sm:py-28 lg:py-36">
+      <SectionBackground />
 
       <div className="section-padding relative z-10">
-        <div className="section-container">
-          {/* Circular stat badges */}
+        <div className="section-container space-y-20 sm:space-y-28">
+          {/* Brand Story */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={spring}
-            className="flex flex-wrap justify-center gap-4 sm:gap-6"
+            className="mx-auto max-w-3xl text-center"
           >
-            {statBadges.map((badge) => (
-              <StatBadge key={badge.label} {...badge} />
-            ))}
+            <span className="eyebrow">Brand Story</span>
+            <h2 className="editorial-headline mt-5 text-4xl sm:text-5xl">
+              Tea Time,
+              <br />
+              <span className="italic text-lavender-400">Every Day</span>
+            </h2>
+            <p className="mt-5 text-base leading-relaxed text-navy-500">
+              Tea time is a small healing moment — a pause to share hearts and find rest. TEABLESS was
+              born from the temperature and scent of tea: delicate fragrance paired with a low-irritation
+              formula for comfortable, everyday relaxation.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-navy-400">
+              For those sensitive to skin and scent, we offer body care that feels as gentle as a cup of
+              white tea. Tea extracts and premium fragrances create a deep, soft, lingering scent — your
+              daily comfort, bottled.
+            </p>
           </motion.div>
 
-          {/* Icon benefit row */}
+          {/* Scent Pyramid */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ ...spring, delay: 0.08 }}
-            className="mx-auto mt-10 flex max-w-lg justify-between gap-2 sm:mt-12 sm:max-w-xl sm:gap-4"
+            transition={spring}
           >
-            {benefitIcons.map(({ icon: Icon, label, desc }) => (
-              <div key={label} className="flex flex-1 flex-col items-center text-center">
-                <div className="flex h-12 w-12 items-center justify-center rounded-full border border-aqua-200/80 bg-white/60 shadow-glass backdrop-blur-md sm:h-14 sm:w-14">
-                  <Icon className="h-5 w-5 text-aqua-500 sm:h-6 sm:w-6" />
-                </div>
-                <p className="mt-2 text-xs font-bold text-navy-700 sm:text-sm">{label}</p>
-                <p className="mt-0.5 text-[10px] text-navy-400 sm:text-[11px]">{desc}</p>
-              </div>
-            ))}
-          </motion.div>
+            <div className="text-center">
+              <span className="eyebrow">Scent Story</span>
+              <h3 className="font-display mt-4 text-3xl font-extrabold text-navy-700 sm:text-4xl">
+                Lily Musk White Tea
+              </h3>
+              <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-navy-500">
+                Inspired by the delicate scent of young white tea leaves covered in silvery down — a
+                transparent, calm floral musk that feels as soft and clean as your first sip.
+              </p>
+            </div>
 
-          {/* Editorial split — product left, copy right */}
-          <div className="mt-16 grid items-center gap-10 lg:mt-24 lg:grid-cols-2 lg:gap-16">
+            <div className="mt-10 grid gap-4 sm:grid-cols-3 sm:gap-6">
+              {scentNotes.map((note, i) => (
+                <motion.div
+                  key={note.layer}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, ...spring }}
+                  className="glass-card"
+                >
+                  <div className="glass-card-body p-6 sm:p-8">
+                    <span
+                      className={`inline-flex rounded-full border px-3 py-1 text-[10px] font-bold uppercase tracking-wider ${note.accent}`}
+                    >
+                      {note.layer}
+                    </span>
+                    <h4 className="mt-4 text-lg font-bold text-navy-700">{note.notes}</h4>
+                    <p className="mt-2 text-sm leading-relaxed text-navy-500">{note.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
             <motion.div
-              initial={{ opacity: 0, x: -24 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 12 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={spring}
-              className="order-2 lg:order-1"
+              className="mx-auto mt-8 flex max-w-md items-center justify-center gap-3 rounded-2xl border border-lavender-200/80 bg-lavender-50/60 px-6 py-4 backdrop-blur-sm"
             >
-              <FloatingProductVisual />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 24 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ ...spring, delay: 0.1 }}
-              className="order-1 flex flex-col justify-center lg:order-2"
-            >
-              <span className="eyebrow w-fit">Madagascar Centella Ampoule</span>
-              <h2 className="editorial-headline mt-5 text-4xl sm:text-5xl lg:text-[3.25rem]">
-                Gently Restores
-                <br />
-                <span className="italic text-aqua-600">Barrier You Can Feel</span>
-              </h2>
-              <p className="mt-5 max-w-md text-base leading-relaxed text-navy-500">
-                Single-extracted centella from Madagascar highlands. Pure power. Zero compromise.
+              <IconWind className="h-5 w-5 shrink-0 text-lavender-400" />
+              <p className="text-sm font-semibold text-navy-600">
+                24-hour fragrance longevity — exceptional staying power, test completed
               </p>
-              <p className="mt-3 max-w-md text-sm text-navy-400">
-                7× more actives than ordinary centella — clinically calm, deeply hydrating.
-              </p>
-
-              <div className="mt-8 flex flex-wrap gap-2">
-                {[
-                  { icon: IconMicroscope, label: "Dermatologist Tested" },
-                  { icon: IconSprout, label: "Vegan" },
-                  { icon: IconWind, label: "Fragrance-Free" },
-                ].map(({ icon: Icon, label }) => (
-                  <span key={label} className="benefit-pill">
-                    <span className="flex h-7 w-7 items-center justify-center rounded-full border border-aqua-200 bg-aqua-50 text-aqua-600">
-                      <Icon className="h-3.5 w-3.5" />
-                    </span>
-                    {label}
-                  </span>
-                ))}
-              </div>
             </motion.div>
-          </div>
+          </motion.div>
 
-          {/* Texture — copy left, visual right */}
+          {/* Texture & 100hr Extraction */}
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={spring}
-            className="mt-20 rounded-4xl border border-aqua-100/50 bg-gradient-to-br from-aqua-50/70 via-white/50 to-sky-pale/30 p-6 shadow-glass backdrop-blur-sm sm:mt-28 sm:p-10 lg:mt-32"
+            className="rounded-4xl border border-aqua-100/50 bg-gradient-to-br from-aqua-50/70 via-white/50 to-lavender-50/40 p-6 shadow-glass backdrop-blur-sm sm:p-10"
           >
             <div className="grid gap-8 lg:grid-cols-2 lg:items-center lg:gap-12">
               <div>
-                <span className="eyebrow">Texture</span>
+                <span className="eyebrow">Texture & Formula</span>
                 <h3 className="font-display mt-4 text-3xl font-extrabold leading-tight text-navy-700 sm:text-4xl">
-                  Weightless.
+                  Gel Lather.
                   <br />
-                  <span className="text-aqua-600">Absorbed.</span>
+                  <span className="text-aqua-600">Tea Therapy.</span>
                 </h3>
-                <p className="mt-4 max-w-sm text-sm leading-relaxed text-navy-500">
-                  Water-light essence. Sinks in fast. Leaves skin soft — never sticky.
+                <p className="mt-4 max-w-md text-sm leading-relaxed text-navy-500">
+                  A gel-type texture that builds rich foam for moist, satisfying cleansing. Fine green tea
+                  leaf particles meet a luxurious lather — our signature TEA therapy texture that leaves
+                  skin smooth and hydrated.
                 </p>
+                <div className="mt-6 rounded-2xl border border-white/70 bg-white/50 p-5 backdrop-blur-md">
+                  <p className="text-xs font-bold uppercase tracking-wider text-centella-600">
+                    100-Hour Low-Temperature Extraction
+                  </p>
+                  <p className="mt-2 text-sm leading-relaxed text-navy-500">
+                    White tea nutrients and subtle scent are preserved through gentle, low-heat extraction
+                    — never rushed, never overheated. The result: actives that nourish while the fragrance
+                    stays true.
+                  </p>
+                </div>
                 <div className="mt-6 flex flex-wrap gap-3">
-                  {["Watery essence", "Non-sticky", "Layer-ready"].map((tag) => (
+                  {["Rich foam", "Moist cleanse", "Green tea particles"].map((tag) => (
                     <span
                       key={tag}
                       className="rounded-full border border-aqua-100 bg-white/60 px-4 py-2 text-xs font-semibold text-navy-600 backdrop-blur-sm"
@@ -341,33 +292,98 @@ export default function ProductDetails() {
                   ))}
                 </div>
               </div>
-              <SerumTextureArt />
+
+              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/60 bg-gradient-to-br from-aqua-100/60 via-white/70 to-lavender-50/50">
+                <div className="absolute inset-0 flex items-center justify-center p-8">
+                  <div className="relative">
+                    {[0, 1, 2].map((i) => (
+                      <div
+                        key={i}
+                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-aqua-300/30"
+                        style={{
+                          width: `${50 + i * 30}%`,
+                          height: `${50 + i * 30}%`,
+                          animation: `ripple ${4 + i}s ease-out infinite`,
+                          animationDelay: `${i * 0.8}s`,
+                        }}
+                      />
+                    ))}
+                    <div
+                      className="relative h-24 w-36 rounded-3xl sm:h-28 sm:w-44"
+                      style={{
+                        background:
+                          "linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(186,230,253,0.7) 50%, rgba(167,243,208,0.4) 100%)",
+                        boxShadow: "0 12px 40px rgba(74,159,212,0.15), inset 0 2px 6px rgba(255,255,255,0.9)",
+                      }}
+                    />
+                  </div>
+                </div>
+                <p className="absolute inset-x-0 bottom-4 text-center text-[10px] font-medium text-navy-400">
+                  Replace with 05-texture-gel-lather.webp
+                </p>
+              </div>
             </div>
           </motion.div>
 
-          {/* Ingredients — minimal icon list */}
+          {/* Benefits */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={spring}
-            className="mt-20 sm:mt-28"
           >
             <div className="text-center">
-              <span className="eyebrow">Key Actives</span>
-              <h3 className="font-display mt-4 text-2xl font-extrabold text-navy-700 sm:text-3xl">
-                Pure. Proven. Minimal.
+              <span className="eyebrow">Benefits</span>
+              <h3 className="font-display mt-4 text-3xl font-extrabold text-navy-700 sm:text-4xl">
+                Care You Can Feel
               </h3>
             </div>
 
-            <div className="mx-auto mt-10 grid max-w-2xl gap-3 sm:grid-cols-2 sm:gap-4">
+            <div className="mt-10 grid gap-4 sm:grid-cols-3 sm:gap-6">
+              {benefits.map((item, i) => (
+                <motion.div
+                  key={item.label}
+                  initial={{ opacity: 0, y: 16 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.08, ...spring }}
+                  className="glass-card text-center"
+                >
+                  <div className="glass-card-body p-6 sm:p-8">
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-lavender-50 text-lavender-400">
+                      <item.icon className="h-6 w-6" />
+                    </div>
+                    <p className="mt-4 font-display text-3xl font-extrabold text-navy-700">{item.value}</p>
+                    <p className="mt-1 text-sm font-bold text-navy-600">{item.label}</p>
+                    <p className="mt-3 text-sm leading-relaxed text-navy-500">{item.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Key Ingredients */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={spring}
+          >
+            <div className="text-center">
+              <span className="eyebrow">Key Ingredients</span>
+              <h3 className="font-display mt-4 text-2xl font-extrabold text-navy-700 sm:text-3xl">
+                Tea. Barrier. Scent.
+              </h3>
+            </div>
+
+            <div className="mx-auto mt-10 grid max-w-3xl gap-3 sm:grid-cols-2 sm:gap-4">
               {ingredients.map((ing, i) => (
                 <motion.div
                   key={ing.name}
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.06, ...spring }}
+                  transition={{ delay: i * 0.05, ...spring }}
                   className="flex items-center gap-4 rounded-2xl border border-white/70 bg-white/55 p-4 shadow-glass backdrop-blur-md"
                 >
                   <div
@@ -389,18 +405,52 @@ export default function ProductDetails() {
             </div>
           </motion.div>
 
-          {/* How to use — 3 steps, large type */}
+          {/* Certifications */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={spring}
-            className="mt-20 sm:mt-28"
+          >
+            <div className="text-center">
+              <span className="eyebrow">Certifications</span>
+              <h3 className="font-display mt-4 text-2xl font-extrabold text-navy-700 sm:text-3xl">
+                Tested. Trusted.
+              </h3>
+            </div>
+
+            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+              {certifications.map((cert, i) => (
+                <motion.div
+                  key={cert.title}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06, ...spring }}
+                  className="flex flex-col items-center rounded-2xl border border-white/70 bg-white/55 p-4 text-center shadow-glass backdrop-blur-md sm:p-5"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-aqua-200 bg-aqua-50 text-aqua-600">
+                    <IconMicroscope className="h-5 w-5" />
+                  </div>
+                  <p className="mt-3 text-xs font-bold text-navy-700 sm:text-sm">{cert.title}</p>
+                  <p className="mt-1 text-[10px] font-semibold text-navy-500">{cert.org}</p>
+                  <p className="mt-1 text-[10px] leading-snug text-navy-400">{cert.detail}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* How to Use */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={spring}
           >
             <div className="text-center">
               <span className="eyebrow">How to Use</span>
               <h3 className="font-display mt-4 text-2xl font-extrabold text-navy-700 sm:text-3xl">
-                Three Steps. Daily Ritual.
+                Your Shower Ritual
               </h3>
             </div>
 
@@ -414,7 +464,7 @@ export default function ProductDetails() {
                   transition={{ delay: i * 0.1, ...spring }}
                   className="text-center"
                 >
-                  <span className="font-display text-6xl font-extrabold leading-none text-aqua-200 sm:text-7xl">
+                  <span className="font-display text-6xl font-extrabold leading-none text-lavender-200 sm:text-7xl">
                     {step}
                   </span>
                   <h4 className="mt-3 text-lg font-bold text-navy-700">{title}</h4>
@@ -424,14 +474,45 @@ export default function ProductDetails() {
             </div>
           </motion.div>
 
+          {/* Product Info Table */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={spring}
+            className="mx-auto max-w-2xl"
+          >
+            <div className="text-center">
+              <span className="eyebrow">Product Info</span>
+            </div>
+            <div className="mt-6 overflow-hidden rounded-2xl border border-white/70 bg-white/55 shadow-glass backdrop-blur-md">
+              <table className="w-full text-left text-sm">
+                <tbody>
+                  {productInfo.map((row, i) => (
+                    <tr
+                      key={row.label}
+                      className={i < productInfo.length - 1 ? "border-b border-aqua-100/60" : ""}
+                    >
+                      <th className="w-[40%] px-5 py-4 text-xs font-semibold uppercase tracking-wider text-navy-400">
+                        {row.label}
+                      </th>
+                      <td className="px-5 py-4 font-medium text-navy-700">{row.value}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </motion.div>
+
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={spring}
-            className="mx-auto mt-16 max-w-xl text-center text-[11px] leading-relaxed text-navy-400"
+            className="mx-auto max-w-xl text-center text-[11px] leading-relaxed text-navy-400"
           >
-            Purified Water · Centella Asiatica Extract · Sodium Hyaluronate · Made in Korea · 55ml / 100ml
+            * 59.82% dead skin cell (keratin) improvement based on clinical testing. Individual results may
+            vary. Fragrance longevity claim based on completed product testing.
           </motion.p>
         </div>
       </div>
