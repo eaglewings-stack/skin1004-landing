@@ -41,7 +41,7 @@ export default function HeroSection() {
       <div className="section-padding relative z-10 pb-16 pt-24 sm:pb-24 sm:pt-28">
         <div className="section-container">
           <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
-            <div className="flex w-full flex-col gap-6">
+            <div className="flex w-full flex-col items-center gap-6 lg:items-stretch">
               <motion.div
                 initial={{ opacity: 0, scale: 0.96 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -74,7 +74,9 @@ export default function HeroSection() {
                 </motion.div>
               </motion.div>
 
-              <BrandFilmVideo className="mx-auto w-full max-w-md lg:max-w-none" />
+              <div className="flex w-full justify-center">
+                <BrandFilmVideo className="w-full max-w-md lg:max-w-xl" />
+              </div>
             </div>
 
             <motion.div initial="hidden" animate="visible" className="text-center lg:text-left">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Nunito, DM_Sans, Playfair_Display } from "next/font/google";
+import ScrollRestoration from "@/components/ScrollRestoration";
 import "./globals.css";
 
 const nunito = Nunito({
@@ -43,7 +44,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${nunito.variable} ${dmSans.variable} ${playfair.variable}`}>
-      <body className="font-sans antialiased">{children}</body>
+      <body className="font-sans antialiased">
+        <ScrollRestoration />
+        {children}
+      </body>
     </html>
   );
 }

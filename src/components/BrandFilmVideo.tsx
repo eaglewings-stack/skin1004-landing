@@ -26,7 +26,7 @@ export default function BrandFilmVideo({ className = "" }: BrandFilmVideoProps) 
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
-      className={`relative aspect-video w-full overflow-hidden rounded-2xl border border-white/60 bg-navy-900/5 shadow-glass ${className}`}
+      className={`relative mx-auto aspect-video w-full overflow-hidden rounded-2xl border border-white/60 bg-navy-900/5 shadow-glass ${className}`}
     >
       {isYoutube ? (
         <iframe

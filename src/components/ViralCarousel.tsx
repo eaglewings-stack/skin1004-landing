@@ -70,6 +70,7 @@ export default function ViralCarousel() {
   const [direction, setDirection] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
   const touchStartX = useRef(0);
+  const isInitialScroll = useRef(true);
 
   const goTo = useCallback(
     (index: number, dir?: number) => {
@@ -87,13 +88,15 @@ export default function ViralCarousel() {
     const el = scrollRef.current;
     if (!el) return;
 
-    const scrollToActive = () => {
-      const card = el.children[activeIndex] as HTMLElement | undefined;
-      if (card) {
-        card.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
-      }
-    };
-    scrollToActive();
+    const card = el.children[activeIndex] as HTMLElement | undefined;
+    if (!card) return;
+
+    const targetLeft = card.offsetLeft - (el.clientWidth - card.clientWidth) / 2;
+    el.scrollTo({
+      left: Math.max(0, targetLeft),
+      behavior: isInitialScroll.current ? "auto" : "smooth",
+    });
+    isInitialScroll.current = false;
   }, [activeIndex]);
 
   const handleTouchStart = (e: React.TouchEvent) => {
