@@ -12,6 +12,8 @@ import {
   IconMicroscope,
   IconSprout,
 } from "./icons";
+import LandingImage from "./LandingImage";
+import { LANDING_IMAGES } from "@/lib/landingImages";
 
 const scentNotes = [
   {
@@ -169,39 +171,53 @@ export default function ProductDetails() {
 
       <div className="section-padding relative z-10">
         <div className="section-container space-y-20 sm:space-y-28">
-          {/* Brand Story */}
+          {/* Brand Story — 10 */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={spring}
-            className="mx-auto max-w-3xl text-center"
+            className="space-y-8"
           >
-            <span className="eyebrow">Brand Story</span>
-            <h2 className="editorial-headline mt-5 text-4xl sm:text-5xl">
-              Tea Time,
-              <br />
-              <span className="italic text-lavender-400">Every Day</span>
-            </h2>
-            <p className="mt-5 text-base leading-relaxed text-navy-500">
-              Tea time is a small healing moment — a pause to share hearts and find rest. TEABLESS was
-              born from the temperature and scent of tea: delicate fragrance paired with a low-irritation
-              formula for comfortable, everyday relaxation.
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-navy-400">
-              For those sensitive to skin and scent, we offer body care that feels as gentle as a cup of
-              white tea. Tea extracts and premium fragrances create a deep, soft, lingering scent — your
-              daily comfort, bottled.
-            </p>
+            <LandingImage
+              slug={LANDING_IMAGES.brandStory}
+              alt="TEABLESS brand story — tea time ritual and everyday comfort"
+              aspect="4/5"
+            />
+            <div className="mx-auto max-w-3xl text-center">
+              <span className="eyebrow">Brand Story</span>
+              <h2 className="editorial-headline mt-5 text-4xl sm:text-5xl">
+                Tea Time,
+                <br />
+                <span className="italic text-lavender-400">Every Day</span>
+              </h2>
+              <p className="mt-5 text-base leading-relaxed text-navy-500">
+                Tea time is a small healing moment — a pause to share hearts and find rest. TEABLESS was
+                born from the temperature and scent of tea: delicate fragrance paired with a low-irritation
+                formula for comfortable, everyday relaxation.
+              </p>
+              <p className="mt-4 text-sm leading-relaxed text-navy-400">
+                For those sensitive to skin and scent, we offer body care that feels as gentle as a cup of
+                white tea. Tea extracts and premium fragrances create a deep, soft, lingering scent — your
+                daily comfort, bottled.
+              </p>
+            </div>
           </motion.div>
 
-          {/* Scent Pyramid */}
+          {/* Scent Pyramid — 03 + 09 */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={spring}
+            className="space-y-10"
           >
+            <LandingImage
+              slug={LANDING_IMAGES.scentIngredients}
+              alt="Lily Musk White Tea scent ingredients and fragrance notes"
+              aspect="4/5"
+            />
+
             <div className="text-center">
               <span className="eyebrow">Scent Story</span>
               <h3 className="font-display mt-4 text-3xl font-extrabold text-navy-700 sm:text-4xl">
@@ -213,7 +229,7 @@ export default function ProductDetails() {
               </p>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-3 sm:gap-6">
+            <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
               {scentNotes.map((note, i) => (
                 <motion.div
                   key={note.layer}
@@ -236,12 +252,18 @@ export default function ProductDetails() {
               ))}
             </div>
 
+            <LandingImage
+              slug={LANDING_IMAGES.fragrance24hr}
+              alt="24-hour fragrance longevity — lily musk white tea mood"
+              aspect="4/5"
+            />
+
             <motion.div
               initial={{ opacity: 0, y: 12 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={spring}
-              className="mx-auto mt-8 flex max-w-md items-center justify-center gap-3 rounded-2xl border border-lavender-200/80 bg-lavender-50/60 px-6 py-4 backdrop-blur-sm"
+              className="mx-auto flex max-w-md items-center justify-center gap-3 rounded-2xl border border-lavender-200/80 bg-lavender-50/60 px-6 py-4 backdrop-blur-sm"
             >
               <IconWind className="h-5 w-5 shrink-0 text-lavender-400" />
               <p className="text-sm font-semibold text-navy-600">
@@ -250,7 +272,7 @@ export default function ProductDetails() {
             </motion.div>
           </motion.div>
 
-          {/* Texture & 100hr Extraction */}
+          {/* Texture & 100hr Extraction — 04 + 05 */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -293,45 +315,42 @@ export default function ProductDetails() {
                 </div>
               </div>
 
-              <div className="relative aspect-[4/3] overflow-hidden rounded-3xl border border-white/60 bg-gradient-to-br from-aqua-100/60 via-white/70 to-lavender-50/50">
-                <div className="absolute inset-0 flex items-center justify-center p-8">
-                  <div className="relative">
-                    {[0, 1, 2].map((i) => (
-                      <div
-                        key={i}
-                        className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-aqua-300/30"
-                        style={{
-                          width: `${50 + i * 30}%`,
-                          height: `${50 + i * 30}%`,
-                          animation: `ripple ${4 + i}s ease-out infinite`,
-                          animationDelay: `${i * 0.8}s`,
-                        }}
-                      />
-                    ))}
-                    <div
-                      className="relative h-24 w-36 rounded-3xl sm:h-28 sm:w-44"
-                      style={{
-                        background:
-                          "linear-gradient(180deg, rgba(255,255,255,0.95) 0%, rgba(186,230,253,0.7) 50%, rgba(167,243,208,0.4) 100%)",
-                        boxShadow: "0 12px 40px rgba(74,159,212,0.15), inset 0 2px 6px rgba(255,255,255,0.9)",
-                      }}
-                    />
-                  </div>
-                </div>
-                <p className="absolute inset-x-0 bottom-4 text-center text-[10px] font-medium text-navy-400">
-                  Replace with 05-texture-gel-lather.webp
-                </p>
+              <div className="space-y-4">
+                <LandingImage
+                  slug={LANDING_IMAGES.textureGelLather}
+                  alt="TEABLESS gel lather texture — rich foam with green tea particles"
+                  aspect="4/5"
+                />
+                <LandingImage
+                  slug={LANDING_IMAGES.extraction100hr}
+                  alt="100-hour low-temperature white tea extraction process"
+                  aspect="4/5"
+                />
               </div>
             </div>
           </motion.div>
 
-          {/* Benefits */}
+          {/* Benefits — 06 + 07 */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={spring}
+            className="space-y-10"
           >
+            <div className="grid gap-4 sm:grid-cols-2">
+              <LandingImage
+                slug={LANDING_IMAGES.exfoliationSmoothSkin}
+                alt="Gentle exfoliation with green tea particles — smooth, refined skin"
+                aspect="4/5"
+              />
+              <LandingImage
+                slug={LANDING_IMAGES.ceramideMoisture}
+                alt="Ceramide NP moisture barrier care — hydrated post-shower skin"
+                aspect="4/5"
+              />
+            </div>
+
             <div className="text-center">
               <span className="eyebrow">Benefits</span>
               <h3 className="font-display mt-4 text-3xl font-extrabold text-navy-700 sm:text-4xl">
@@ -339,7 +358,7 @@ export default function ProductDetails() {
               </h3>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-3 sm:gap-6">
+            <div className="grid gap-4 sm:grid-cols-3 sm:gap-6">
               {benefits.map((item, i) => (
                 <motion.div
                   key={item.label}
@@ -405,13 +424,20 @@ export default function ProductDetails() {
             </div>
           </motion.div>
 
-          {/* Certifications */}
+          {/* Certifications — 08 */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={spring}
+            className="space-y-10"
           >
+            <LandingImage
+              slug={LANDING_IMAGES.certificationsTrust}
+              alt="TEABLESS certifications — sensitive skin tested, vegan, antioxidant verified"
+              aspect="16/9"
+            />
+
             <div className="text-center">
               <span className="eyebrow">Certifications</span>
               <h3 className="font-display mt-4 text-2xl font-extrabold text-navy-700 sm:text-3xl">
@@ -419,7 +445,7 @@ export default function ProductDetails() {
               </h3>
             </div>
 
-            <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
+            <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4">
               {certifications.map((cert, i) => (
                 <motion.div
                   key={cert.title}
@@ -440,13 +466,20 @@ export default function ProductDetails() {
             </div>
           </motion.div>
 
-          {/* How to Use */}
+          {/* How to Use — 11 */}
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={spring}
+            className="space-y-10"
           >
+            <LandingImage
+              slug={LANDING_IMAGES.howToUse}
+              alt="How to use TEABLESS — three-step shower ritual"
+              aspect="16/9"
+            />
+
             <div className="text-center">
               <span className="eyebrow">How to Use</span>
               <h3 className="font-display mt-4 text-2xl font-extrabold text-navy-700 sm:text-3xl">
@@ -454,7 +487,7 @@ export default function ProductDetails() {
               </h3>
             </div>
 
-            <div className="mx-auto mt-12 grid max-w-3xl gap-8 sm:grid-cols-3 sm:gap-6">
+            <div className="mx-auto grid max-w-3xl gap-8 sm:grid-cols-3 sm:gap-6">
               {usageSteps.map(({ step, title, text }, i) => (
                 <motion.div
                   key={step}
@@ -472,6 +505,30 @@ export default function ProductDetails() {
                 </motion.div>
               ))}
             </div>
+          </motion.div>
+
+          {/* Customer Reviews — 12 */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={spring}
+            className="space-y-6"
+          >
+            <div className="text-center">
+              <span className="eyebrow">Customer Reviews</span>
+              <h3 className="font-display mt-4 text-2xl font-extrabold text-navy-700 sm:text-3xl">
+                Loved by Real Users
+              </h3>
+              <p className="mx-auto mt-3 max-w-xl text-sm leading-relaxed text-navy-500">
+                See what customers are saying about the scent, texture, and everyday comfort of TEABLESS.
+              </p>
+            </div>
+            <LandingImage
+              slug={LANDING_IMAGES.customerReviews}
+              alt="TEABLESS customer reviews and social proof"
+              aspect="4/5"
+            />
           </motion.div>
 
           {/* Product Info Table */}

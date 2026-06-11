@@ -1,9 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { IconLeaf, IconShield, IconDroplet, IconWind } from "./icons";
+import LandingImage from "./LandingImage";
+import { LANDING_IMAGES } from "@/lib/landingImages";
 
 const highlights = [
   { icon: IconWind, title: "24-Hour Scent", desc: "Lingering lily musk white tea" },
@@ -25,8 +25,6 @@ const fadeUp = {
 };
 
 export default function HeroSection() {
-  const [imgError, setImgError] = useState(false);
-
   return (
     <section id="hero" className="relative overflow-hidden">
       <div
@@ -48,40 +46,15 @@ export default function HeroSection() {
               transition={{ ...spring, delay: 0.15 }}
               className="relative mx-auto w-full max-w-md lg:max-w-none"
             >
-              <div className="relative aspect-[4/5] overflow-hidden rounded-4xl border border-white/70 shadow-glass-lg">
-                {!imgError ? (
-                  <Image
-                    src="/landing-assets/images/01-hero-main.webp"
-                    alt="TEABLESS Lily Musk White Tea Perfume Body Wash"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    onError={() => setImgError(true)}
-                  />
-                ) : (
-                  <div
-                    className="absolute inset-0 flex flex-col items-center justify-center p-8"
-                    style={{
-                      background:
-                        "linear-gradient(145deg, rgba(243,232,255,0.95) 0%, rgba(224,244,254,0.9) 45%, rgba(236,253,245,0.85) 100%)",
-                    }}
-                  >
-                    <div
-                      className="h-56 w-28 rounded-b-3xl rounded-t-lg sm:h-64 sm:w-32"
-                      style={{
-                        background:
-                          "linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(243,232,255,0.9) 50%, rgba(167,243,208,0.35) 100%)",
-                        boxShadow: "0 20px 56px rgba(192,132,252,0.12), inset 0 2px 8px rgba(255,255,255,0.95)",
-                      }}
-                    />
-                    <p className="mt-6 text-center text-[10px] font-semibold uppercase tracking-[0.2em] text-navy-400">
-                      Add 01-hero-main.webp
-                    </p>
-                  </div>
-                )}
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-24 bg-gradient-to-b from-white/30 to-transparent" />
-              </div>
+              <LandingImage
+                slug={LANDING_IMAGES.heroMain}
+                alt="TEABLESS Lily Musk White Tea Perfume Body Wash"
+                priority
+                aspect="4/5"
+                rounded="rounded-4xl"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="shadow-glass-lg"
+              />
 
               <motion.div
                 initial={{ opacity: 0, x: 16 }}
@@ -150,6 +123,21 @@ export default function HeroSection() {
               </motion.div>
             </motion.div>
           </div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ ...spring, delay: 0.4 }}
+            className="mt-12 sm:mt-14"
+          >
+            <LandingImage
+              slug={LANDING_IMAGES.heroLifestyle}
+              alt="TEABLESS Lily Musk White Tea lifestyle — calm tea-time shower ritual"
+              aspect="4/5"
+              rounded="rounded-4xl"
+              sizes="100vw"
+            />
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
