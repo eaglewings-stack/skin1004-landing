@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { IconLeaf, IconShield, IconDroplet, IconWind } from "./icons";
+import BrandFilmVideo from "./BrandFilmVideo";
 import LandingImage from "./LandingImage";
 import { LANDING_IMAGES } from "@/lib/landingImages";
 
@@ -39,38 +40,42 @@ export default function HeroSection() {
 
       <div className="section-padding relative z-10 pb-16 pt-24 sm:pb-24 sm:pt-28">
         <div className="section-container">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <motion.div
-              initial={{ opacity: 0, scale: 0.96 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ ...spring, delay: 0.15 }}
-              className="relative mx-auto w-full max-w-md lg:max-w-none"
-            >
-              <LandingImage
-                slug={LANDING_IMAGES.heroMain}
-                alt="TEABLESS Lily Musk White Tea Perfume Body Wash"
-                priority
-                aspect="4/5"
-                rounded="rounded-4xl"
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="shadow-glass-lg"
-              />
-
+          <div className="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="flex w-full flex-col gap-6">
               <motion.div
-                initial={{ opacity: 0, x: 16 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ ...spring, delay: 0.45 }}
-                className="absolute -right-2 top-6 sm:right-4 lg:-right-4"
+                initial={{ opacity: 0, scale: 0.96 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ ...spring, delay: 0.15 }}
+                className="relative mx-auto w-full max-w-md lg:max-w-none"
               >
-                <div className="rounded-2xl border border-white/70 bg-white/50 px-4 py-3 backdrop-blur-xl shadow-glass">
-                  <p className="text-[9px] font-semibold uppercase tracking-wider text-lavender-400">
-                    Tested
-                  </p>
-                  <p className="font-display text-lg font-extrabold text-navy-700 sm:text-xl">24 Hours</p>
-                  <p className="text-[10px] text-navy-400">Fragrance longevity</p>
-                </div>
+                <LandingImage
+                  slug={LANDING_IMAGES.heroMain}
+                  alt="TEABLESS Lily Musk White Tea Perfume Body Wash"
+                  priority
+                  aspect="4/5"
+                  rounded="rounded-4xl"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="shadow-glass-lg"
+                />
+
+                <motion.div
+                  initial={{ opacity: 0, x: 16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ ...spring, delay: 0.45 }}
+                  className="absolute -right-2 top-6 sm:right-4 lg:-right-4"
+                >
+                  <div className="rounded-2xl border border-white/70 bg-white/50 px-4 py-3 backdrop-blur-xl shadow-glass">
+                    <p className="text-[9px] font-semibold uppercase tracking-wider text-lavender-400">
+                      Tested
+                    </p>
+                    <p className="font-display text-lg font-extrabold text-navy-700 sm:text-xl">24 Hours</p>
+                    <p className="text-[10px] text-navy-400">Fragrance longevity</p>
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
+
+              <BrandFilmVideo className="mx-auto w-full max-w-md lg:max-w-none" />
+            </div>
 
             <motion.div initial="hidden" animate="visible" className="text-center lg:text-left">
               <motion.div custom={0} variants={fadeUp} className="flex flex-wrap justify-center gap-2 lg:justify-start">
